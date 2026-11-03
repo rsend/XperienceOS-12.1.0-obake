@@ -1,0 +1,12 @@
+lib/gcc/arm-eabi/4.8/include-fixed/README
+share/gdb/python/gdb/__init__.py
+share/gdb/python/gdb/command/__init__.py
+share/gdb/python/gdb/command/explore.py
+share/gdb/python/gdb/command/pretty_printers.py
+share/gdb/python/gdb/command/prompt.py
+share/gdb/python/gdb/command/type_printers.py
+share/gdb/python/gdb/function/__init__.py
+share/gdb/python/gdb/function/strfns.py
+share/gdb/python/gdb/printing.py
+share/gdb/python/gdb/prompt.py
+share/gdb/python/gdb/types.py

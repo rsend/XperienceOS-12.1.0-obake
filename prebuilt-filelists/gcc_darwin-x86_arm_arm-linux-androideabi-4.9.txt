@@ -1,0 +1,7 @@
+COPYING
+COPYING.LIB
+COPYING.RUNTIME
+COPYING3
+COPYING3.LIB
+NOTICE
+lib/gcc/arm-linux-androideabi/4.9.x/include-fixed/README

@@ -1,0 +1,301 @@
+[
+  {
+    "path": "prebuilts/abi-dumps/ndk",
+    "revision": "9b4c58b905c1c92c1b8630d9da7c96b9a92e5ddc",
+    "url": "https://android.googlesource.com/platform/prebuilts/abi-dumps/ndk",
+    "retained_files": 57,
+    "regular_file_bytes": 798700,
+    "local_overrides": []
+  },
+  {
+    "path": "prebuilts/abi-dumps/vndk",
+    "revision": "a0ad82df9e4ceacfc60f7ebbf9779d3d92eeb773",
+    "url": "https://android.googlesource.com/platform/prebuilts/abi-dumps/vndk",
+    "retained_files": 582,
+    "regular_file_bytes": 14074829,
+    "local_overrides": []
+  },
+  {
+    "path": "prebuilts/android-emulator",
+    "revision": "400cd54dca1c329fd7f1c8cb9e40b1fbbf3f3af3",
+    "url": "https://android.googlesource.com/platform/prebuilts/android-emulator",
+    "retained_files": 6,
+    "regular_file_bytes": 226943,
+    "local_overrides": []
+  },
+  {
+    "path": "prebuilts/build-tools",
+    "revision": "88fa20009d5581163b4656d52e2fcc1f56042da6",
+    "url": "https://android.googlesource.com/platform/prebuilts/build-tools",
+    "retained_files": 27,
+    "regular_file_bytes": 45356515,
+    "local_overrides": []
+  },
+  {
+    "path": "prebuilts/checkstyle",
+    "revision": "a8a50e922b39a2dba7e56030c660e1aabca168f3",
+    "url": "https://android.googlesource.com/platform/prebuilts/checkstyle",
+    "retained_files": 17,
+    "regular_file_bytes": 6327924,
+    "local_overrides": []
+  },
+  {
+    "path": "prebuilts/clang/host/darwin-x86",
+    "revision": "f59dae743731eef0cf012408603291c253eed5c3",
+    "url": "https://android.googlesource.com/platform/prebuilts/clang/host/darwin-x86",
+    "retained_files": 42,
+    "regular_file_bytes": 624553,
+    "local_overrides": []
+  },
+  {
+    "path": "prebuilts/clang/host/linux-x86",
+    "revision": "ce80566d209ef0fba56e5bd4cc4cf11435f83a71",
+    "url": "https://android.googlesource.com/platform/prebuilts/clang/host/linux-x86",
+    "retained_files": 2265,
+    "regular_file_bytes": 711987202,
+    "local_overrides": []
+  },
+  {
+    "path": "prebuilts/deqp",
+    "revision": "fcff955e99f3d02e7fe0b0a65818b5cc690594b7",
+    "url": "https://android.googlesource.com/platform/prebuilts/deqp",
+    "retained_files": 2,
+    "regular_file_bytes": 388,
+    "local_overrides": []
+  },
+  {
+    "path": "prebuilts/devtools",
+    "revision": "2538644348d06278149f8f918930d058cb4f32a7",
+    "url": "https://android.googlesource.com/platform/prebuilts/devtools",
+    "retained_files": 197,
+    "regular_file_bytes": 50704424,
+    "local_overrides": []
+  },
+  {
+    "path": "prebuilts/gcc/darwin-x86/aarch64/aarch64-linux-android-4.9",
+    "revision": "91a0cf84baffc9808b93554451e149b12f2ad6d2",
+    "url": "https://android.googlesource.com/platform/prebuilts/gcc/darwin-x86/aarch64/aarch64-linux-android-4.9",
+    "retained_files": 7,
+    "regular_file_bytes": 109391,
+    "local_overrides": []
+  },
+  {
+    "path": "prebuilts/gcc/darwin-x86/arm/arm-eabi-4.8",
+    "revision": "6d08ca9f45ff685648fd13c75bf5cac4b11c19bb",
+    "url": "https://android.googlesource.com/platform/prebuilts/gcc/darwin-x86/arm/arm-eabi-4.8",
+    "retained_files": 12,
+    "regular_file_bytes": 75907,
+    "local_overrides": []
+  },
+  {
+    "path": "prebuilts/gcc/darwin-x86/arm/arm-linux-androideabi-4.9",
+    "revision": "20aadb937757fdff11c09010765f63c20ebb5042",
+    "url": "https://android.googlesource.com/platform/prebuilts/gcc/darwin-x86/arm/arm-linux-androideabi-4.9",
+    "retained_files": 7,
+    "regular_file_bytes": 109391,
+    "local_overrides": []
+  },
+  {
+    "path": "prebuilts/gcc/darwin-x86/host/i686-apple-darwin-4.2.1",
+    "revision": "ec5aa66aaa4964c27564d0ec84dc1f18a2d72b7e",
+    "url": "https://android.googlesource.com/platform/prebuilts/gcc/darwin-x86/host/i686-apple-darwin-4.2.1",
+    "retained_files": 3,
+    "regular_file_bytes": 19502,
+    "local_overrides": []
+  },
+  {
+    "path": "prebuilts/gcc/darwin-x86/x86/x86_64-linux-android-4.9",
+    "revision": "4e41eb8af41e0ed06d8237a4de8c75e2c3698f79",
+    "url": "https://android.googlesource.com/platform/prebuilts/gcc/darwin-x86/x86/x86_64-linux-android-4.9",
+    "retained_files": 7,
+    "regular_file_bytes": 109391,
+    "local_overrides": []
+  },
+  {
+    "path": "prebuilts/gcc/linux-x86/aarch64/aarch64-linux-android-4.9",
+    "revision": "c9c4fb77a024d2610f83e54e536c99a964ea85ab",
+    "url": "https://android.googlesource.com/platform/prebuilts/gcc/linux-x86/aarch64/aarch64-linux-android-4.9",
+    "retained_files": 7,
+    "regular_file_bytes": 109391,
+    "local_overrides": []
+  },
+  {
+    "path": "prebuilts/gcc/linux-x86/arm/arm-eabi-4.8",
+    "revision": "26e93f6af47f7bd3a9beb5c102a5f45e19bfa38a",
+    "url": "https://android.googlesource.com/platform/prebuilts/gcc/linux-x86/arm/arm-eabi-4.8",
+    "retained_files": 12,
+    "regular_file_bytes": 75907,
+    "local_overrides": []
+  },
+  {
+    "path": "prebuilts/gcc/linux-x86/arm/arm-linux-androideabi-4.9",
+    "revision": "43bf3bf040b873cb1334cdc0687a03d8d6f4b1c8",
+    "url": "https://android.googlesource.com/platform/prebuilts/gcc/linux-x86/arm/arm-linux-androideabi-4.9",
+    "retained_files": 190,
+    "regular_file_bytes": 118675341,
+    "local_overrides": []
+  },
+  {
+    "path": "prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.11-4.8",
+    "revision": "a706ab3bc2ac5168166659d6423da4b8b8e8644b",
+    "url": "https://android.googlesource.com/platform/prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.11-4.8",
+    "retained_files": 7,
+    "regular_file_bytes": 86642,
+    "local_overrides": []
+  },
+  {
+    "path": "prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.15-4.8",
+    "revision": "12eccb2e29b05b39fa83e5299b1f4486b9e743a4",
+    "url": "https://android.googlesource.com/platform/prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.15-4.8",
+    "retained_files": 3541,
+    "regular_file_bytes": 240883563,
+    "local_overrides": []
+  },
+  {
+    "path": "prebuilts/gcc/linux-x86/host/x86_64-w64-mingw32-4.8",
+    "revision": "e76a9a506d7ad132f107eb2f7c27b6a8ccb68b91",
+    "url": "https://android.googlesource.com/platform/prebuilts/gcc/linux-x86/host/x86_64-w64-mingw32-4.8",
+    "retained_files": 80,
+    "regular_file_bytes": 2613044,
+    "local_overrides": []
+  },
+  {
+    "path": "prebuilts/gcc/linux-x86/x86/x86_64-linux-android-4.9",
+    "revision": "a57c546eec04da569ddd24dd72b0d57feb95845a",
+    "url": "https://android.googlesource.com/platform/prebuilts/gcc/linux-x86/x86/x86_64-linux-android-4.9",
+    "retained_files": 7,
+    "regular_file_bytes": 109391,
+    "local_overrides": []
+  },
+  {
+    "path": "prebuilts/gdb/darwin-x86",
+    "revision": "0a8c90248264a8b26970b4473770bcc3df8515fe",
+    "url": "https://android.googlesource.com/platform/prebuilts/gdb/darwin-x86",
+    "retained_files": 1410,
+    "regular_file_bytes": 17919110,
+    "local_overrides": []
+  },
+  {
+    "path": "prebuilts/gdb/linux-x86",
+    "revision": "4adfde8bc82dd39f59e0445588c3e599ada477d2",
+    "url": "https://android.googlesource.com/platform/prebuilts/gdb/linux-x86",
+    "retained_files": 1266,
+    "regular_file_bytes": 16592671,
+    "local_overrides": []
+  },
+  {
+    "path": "prebuilts/go/darwin-x86",
+    "revision": "d240e4f742d2799a3b4bf1ba4d695d0e28dc9040",
+    "url": "https://android.googlesource.com/platform/prebuilts/go/darwin-x86",
+    "retained_files": 27,
+    "regular_file_bytes": 56940,
+    "local_overrides": []
+  },
+  {
+    "path": "prebuilts/go/linux-x86",
+    "revision": "9802e351bf16f8137807da945a4bc36371a16be6",
+    "url": "https://android.googlesource.com/platform/prebuilts/go/linux-x86",
+    "retained_files": 6578,
+    "regular_file_bytes": 235834417,
+    "local_overrides": []
+  },
+  {
+    "path": "prebuilts/gradle-plugin",
+    "revision": "cd1b6806eae4eaa88d82ce61dbb7c2bcfea1f96a",
+    "url": "https://android.googlesource.com/platform/prebuilts/gradle-plugin",
+    "retained_files": 5,
+    "regular_file_bytes": 25478,
+    "local_overrides": []
+  },
+  {
+    "path": "prebuilts/jdk/jdk8",
+    "revision": "68dabb15582c2e86c9a5ef863e193892b7843792",
+    "url": "https://android.googlesource.com/platform/prebuilts/jdk/jdk8",
+    "retained_files": 192,
+    "regular_file_bytes": 170419011,
+    "local_overrides": []
+  },
+  {
+    "path": "prebuilts/libs/libedit",
+    "revision": "d32685dba4011664b590b94ad156bc734c2c9bb5",
+    "url": "https://android.googlesource.com/platform/prebuilts/libs/libedit",
+    "retained_files": 29,
+    "regular_file_bytes": 292449,
+    "local_overrides": []
+  },
+  {
+    "path": "prebuilts/maven_repo/android",
+    "revision": "c7fc1cdb67ff477e4ef1f7dee12568f223ea18c7",
+    "url": "https://android.googlesource.com/platform/prebuilts/maven_repo/android",
+    "retained_files": 8941,
+    "regular_file_bytes": 417070837,
+    "local_overrides": []
+  },
+  {
+    "path": "prebuilts/maven_repo/bumptech",
+    "revision": "268c5495b8003e09173a1ae7b1e9dc9b019e300d",
+    "url": "https://android.googlesource.com/platform/prebuilts/maven_repo/bumptech",
+    "retained_files": 13,
+    "regular_file_bytes": 980593,
+    "local_overrides": []
+  },
+  {
+    "path": "prebuilts/misc",
+    "revision": "598387341a7104f2bd46fca3e2c1161bce609de3",
+    "url": "https://android.googlesource.com/platform/prebuilts/misc",
+    "retained_files": 983,
+    "regular_file_bytes": 208121064,
+    "local_overrides": []
+  },
+  {
+    "path": "prebuilts/ndk",
+    "revision": "f39cb3e537ad90d4985fc372b339d466799d964e",
+    "url": "https://android.googlesource.com/platform/prebuilts/ndk",
+    "retained_files": 8275,
+    "regular_file_bytes": 442945087,
+    "local_overrides": []
+  },
+  {
+    "path": "prebuilts/python/darwin-x86/2.7.5",
+    "revision": "0c5958b1636c47ed7c284f859c8e805fd06a0e63",
+    "url": "https://android.googlesource.com/platform/prebuilts/python/darwin-x86/2.7.5",
+    "retained_files": 1479,
+    "regular_file_bytes": 18287593,
+    "local_overrides": []
+  },
+  {
+    "path": "prebuilts/python/linux-x86/2.7.5",
+    "revision": "49b50adb1a149100905b368570c2cb56cadc0854",
+    "url": "https://android.googlesource.com/platform/prebuilts/python/linux-x86/2.7.5",
+    "retained_files": 3210,
+    "regular_file_bytes": 55897171,
+    "local_overrides": []
+  },
+  {
+    "path": "prebuilts/qemu-kernel",
+    "revision": "87e7c6027290300bfb92c082c4fa622e78b03359",
+    "url": "https://android.googlesource.com/platform/prebuilts/qemu-kernel",
+    "retained_files": 16,
+    "regular_file_bytes": 45583,
+    "local_overrides": []
+  },
+  {
+    "path": "prebuilts/sdk",
+    "revision": "692a2a62d5862258c6a88d3b9bfcbc1dd0431ae8",
+    "url": "https://android.googlesource.com/platform/prebuilts/sdk",
+    "retained_files": 1875,
+    "regular_file_bytes": 961608510,
+    "local_overrides": [
+      "tools/jack-admin",
+      "tools/jack-tls-legacy.security"
+    ]
+  },
+  {
+    "path": "prebuilts/tools",
+    "revision": "bd037f3696cc33196a876c34a7f5a0dcc6e089ee",
+    "url": "https://android.googlesource.com/platform/prebuilts/tools",
+    "retained_files": 7162,
+    "regular_file_bytes": 499139163,
+    "local_overrides": []
+  }
+]

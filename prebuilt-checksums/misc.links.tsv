@@ -1,0 +1,9 @@
+linux-x86/analyzer/bin/analyzer++	analyzer
+linux-x86/analyzer/bin/clang	analyzer
+linux-x86/analyzer/bin/clang++	analyzer++
+linux-x86_64/protobuf2.5/lib/libprotobuf-lite.so	libprotobuf-lite.so.8.0.0
+linux-x86_64/protobuf2.5/lib/libprotobuf-lite.so.8	libprotobuf-lite.so.8.0.0
+linux-x86_64/protobuf2.5/lib/libprotobuf.so	libprotobuf.so.8.0.0
+linux-x86_64/protobuf2.5/lib/libprotobuf.so.8	libprotobuf.so.8.0.0
+linux-x86_64/protobuf2.5/lib/libprotoc.so	libprotoc.so.8.0.0
+linux-x86_64/protobuf2.5/lib/libprotoc.so.8	libprotoc.so.8.0.0

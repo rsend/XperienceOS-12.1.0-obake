@@ -1,0 +1,7 @@
+com/github/bumptech/glide/disklrucache/SNAPSHOT/disklrucache-SNAPSHOT-sources.jar
+com/github/bumptech/glide/disklrucache/SNAPSHOT/disklrucache-SNAPSHOT.jar
+com/github/bumptech/glide/gifdecoder/SNAPSHOT/gifdecoder-SNAPSHOT-sources.jar
+com/github/bumptech/glide/gifdecoder/SNAPSHOT/gifdecoder-SNAPSHOT.jar
+com/github/bumptech/glide/glide/SNAPSHOT/glide-SNAPSHOT-sources.jar
+com/github/bumptech/glide/glide/SNAPSHOT/glide-SNAPSHOT.jar
+update_repo.sh

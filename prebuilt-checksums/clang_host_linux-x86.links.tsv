@@ -1,0 +1,4 @@
+clang-3289846/lib64/clang/3.8.275480	3.8
+clang-4053586/bin/clang++.real	clang.real
+clang-4053586/lib64/clang/5.0.300080	5.0
+clang-stable	clang-4053586

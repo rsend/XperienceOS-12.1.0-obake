@@ -1,0 +1,4 @@
+# Jack 4.x uses TLS 1.0 for its mutually authenticated loopback connection.
+# Modern JDK 8 releases disable TLS 1.0 and TLS 1.1 globally. This supplemental
+# policy is loaded only by the Jack server JVM, preserving the host-wide policy.
+jdk.tls.disabledAlgorithms=SSLv3, TLSv1.1, RC4, DES, MD5withRSA, DH keySize < 1024, EC keySize < 224, 3DES_EDE_CBC, anon, NULL

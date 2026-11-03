@@ -1,0 +1,55 @@
+Android 8 dependency setup
+
+Run from the checked-out SOURCE_RELEASE contents as a regular sudo-capable
+user on Ubuntu 20.04 amd64:
+
+    bash ./install_deps_android8.sh
+
+This is the xpe711 setup model: the host installer installs Ubuntu packages,
+then calls install_prebuilts.sh. That script fetches immutable Git commits
+and copies only prebuilt-filelists/*.txt. File SHA-256 checksums, symlink
+targets, and executable permissions are checked before each project is
+installed. Existing conflicting directories are refused. A repeated run
+verifies an installation with matching revision and inventory markers.
+
+The reduced dependency set contains 48,536 retained files from 37 pinned
+projects, including small build-control/license remnants from otherwise
+pruned projects. All required files match the tool set used for the successful
+xpe_obake-user bootimage, systemimage, and recoveryimage build. The script
+may download larger Git object packs, but only the selected files are installed.
+The installed dependency tree occupies approximately 4.09 GiB on the current
+ext4 host; allocated size varies by filesystem.
+
+Only two local prebuilt overrides exist: sdk/tools/jack-admin and
+sdk/tools/jack-tls-legacy.security. They preserve the checkout-local Jack
+state/ports and JDK 8 TLS compatibility repairs. Private Jack certificates,
+keys, existing server installations, caches, and build outputs are excluded.
+
+Ubuntu host packages are selected from Ubuntu 20.04's configured repositories.
+Historical Android build inputs are separately pinned by commit, file list,
+and checksum. This Oreo workflow retains Go for Soong and pinned Bison 2.7
+and Flex 2.5.39; it does not copy xpe711's source-built Bison/no-Go choices.
+The installer does not edit shell startup files, select global Java
+alternatives, start Jack, fetch Android source, or run image builds.
+
+Verification:
+
+    bash ./install_deps_android8.sh --verify
+
+For a host whose packages are already installed:
+
+    bash ./install_deps_android8.sh --prebuilts-only
+
+2026-11-03 validation:
+- Ubuntu 20.04 host-package resolution succeeded with apt-get simulation.
+- All 37 immutable commits were found in their public upstream repositories.
+- The complete tool set was reconstructed in a temporary directory from
+  cached pinned Git objects, including both Jack overrides; checks passed.
+- A small pinned project was fetched from upstream with the real installer.
+- Repeated setup, explicit verification, checksum failure cleanup, modified
+  file detection, and conflicting destination refusal passed.
+- The restored Clang variants, ARM/host GCC, Bison, Flex, and Go execute.
+
+The full sudo/apt bootstrap and all-project download have not yet been run
+on a fresh VM. No Android project sources are staged in this directory yet;
+image-build instructions and fresh-checkout image validation follow later.
