@@ -16,7 +16,8 @@ NOT WORKING:
 - DTMF menu controls
 - No automatic SIM handling; hard coded to T-mobile
 - Roaming
-- WiFi / BLE may be broken under enforcing SELinux, I stopped fixing this when I started working on Android 10.
+- WiFi / BLE may be broken under enforcing SELinux
+- Camera audio under enforcing SELinux, I stopped fixing the last two items when I started working on Android 10.
 
 The following is a Codex-generated (but slightly edited) how-to; mostly a summary of how to deploy this if anyone wants to try it.
 
