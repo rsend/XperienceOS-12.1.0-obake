@@ -8,7 +8,8 @@ Jack compile commands: 278 unchanged.
 Kernel configuration: byte-identical before/after trimming.
 Kernel preparation/exported headers and compiler dependency checks pass.
 Known private Widevine/service-account material remains excluded.
-The remaining Dialer transcription API default is documented in BUILD_SCOPE.md.
+The bundled Dialer transcription API key has been removed (empty fallback).
+This Java change followed the successful image build; system.img needs rebuilding.
 
 The user successfully built boot.img, system.img, and recovery.img after trim
 repairs, resuming incrementally between repairs. Output sizes and hashes are

@@ -106,6 +106,11 @@ Additional runtime DRM cleanup:
 The source snapshot was restored and the credential/Widevine removals verified
 again. Unused projects and payloads are now excluded as described in
 BUILD_SCOPE.md. This also excludes the AOSP-disabled Dialer location source
-containing map keys. The voicemail transcription API default is still present
-in compiled Dialer code and remains a separate review item. Earlier per-file
-cleanup lists describe the pre-reduction pass, not the complete final scope.
+containing map keys. The bundled Google voicemail transcription API key was
+also removed from compiled Dialer code; its configuration fallback is now an
+empty string. Transcription remains disabled by default, and using the service
+requires a separately supplied credential. Earlier per-file cleanup lists
+describe the pre-reduction pass, not the complete final scope.
+
+The key removal occurred after the recorded successful three-image build;
+rebuild system.img to include it in a binary release.

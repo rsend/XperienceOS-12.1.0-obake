@@ -38,10 +38,10 @@ public class TranscriptionConfigProvider {
   }
 
   public String getApiKey() {
-    // Android API key restricted to com.google.android.dialer
+    // No bundled credential; deployments must supply their own API key.
     return ConfigProviderBindings.get(context)
         .getString(
-            "voicemail_transcription_client_api_key", "AIzaSyAXdDnif6B7sBYxU8hzw9qAp3pRPVHs060");
+            "voicemail_transcription_client_api_key", "");
   }
 
   public String getAuthToken() {

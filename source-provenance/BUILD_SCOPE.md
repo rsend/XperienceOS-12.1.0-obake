@@ -34,10 +34,10 @@ Widevine firmware are absent. The installed engine's copy and extraction rules
 are removed. Widevine-protected playback may fail. The unused Dialer location
 implementation containing map API keys is also outside this source scope.
 
-One compiled upstream client API default remains in Dialer's voicemail
-transcription configuration. Transcription defaults disabled; that credential
-is a separate remaining review item. No remote credential-validity checks were
-performed. Public Android development signing keys remain necessary build
+The bundled Google API key was removed from Dialer's voicemail transcription
+configuration; the default API key is now empty. Transcription defaults
+disabled. Deployments must supply their own credential to use that service.
+No remote credential-validity checks were performed. Public Android development signing keys remain necessary build
 inputs. The public Qualcomm SSG app signing certificate also remains because
 SELinux mac_permissions generation reads it through `ssg/keys.conf`; no SSG
 private signing key is included; an OpenSSH private-key-format marker in its parser is not a key.
