@@ -1,0 +1,10 @@
+persist.ims.native.enabled u:object_r:ims_native_control_prop:s0
+persist.ims.radio_adapter.enabled u:object_r:ims_radio_adapter_control_prop:s0
+persist.ims.lte_guard.enabled u:object_r:ims_native_control_prop:s0
+sys.ims.rild_socket_fix u:object_r:ims_radio_adapter_control_prop:s0
+sys.ims.volte.intent u:object_r:ims_radio_adapter_control_prop:s0
+sys.ims.carrier.volte u:object_r:ims_radio_adapter_control_prop:s0
+persist.ims.dpl.bootstrap u:object_r:ims_dpl_control_prop:s0
+persist.ims.dpl.timer_bridge u:object_r:ims_dpl_control_prop:s0
+persist.ims.reg.trigger u:object_r:ims_dpl_control_prop:s0
+hw.aov. u:object_r:adspd_prop:s0

@@ -1,0 +1,10 @@
+# SU6-7.7 imsdatadaemon starts as root and drops UID after configuring DSI.
+allow ims self:capability setuid;
+
+# DSI configures the IMS interface/routes before dropping privileges.
+allow ims self:capability net_admin;
+
+# libdiag/libqmi initialization is part of the legacy production stack,
+# not only a userdebug diagnostic feature.
+diag_use(ims)
+allow ims smem_log_device:chr_file rw_file_perms;

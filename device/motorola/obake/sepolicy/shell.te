@@ -1,0 +1,6 @@
+# Permit explicit bring-up and rollback from adb on engineering builds. This
+# property starts only the native IMS daemons and does not claim registration.
+userdebug_or_eng(`
+    set_prop(shell, ims_native_control_prop)
+    set_prop(shell, ims_dpl_control_prop)
+')

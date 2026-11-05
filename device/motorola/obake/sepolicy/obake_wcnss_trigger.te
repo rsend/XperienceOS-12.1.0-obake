@@ -1,0 +1,33 @@
+# Legacy boot-only WCNSS script. Keep it separate from the modern Qualcomm
+# wcnss_service daemon and its unrelated network/diagnostic permissions.
+type obake_wcnss_trigger, domain;
+type sysfs_obake_wcnss_serial, fs_type, sysfs_type;
+type obake_wcnss_persist_config, file_type;
+type obake_wcnss_calibration_link, file_type;
+
+# init starts a shell interpreter with an explicit service context.
+domain_trans(init, shell_exec, obake_wcnss_trigger)
+allow obake_wcnss_trigger shell_exec:file execute_no_trans;
+allow obake_wcnss_trigger toolbox_exec:file rx_file_perms;
+allow obake_wcnss_trigger vendor_file:file r_file_perms;
+allow obake_wcnss_trigger self:fifo_file rw_file_perms;
+
+# Opening this device bootstraps the shared WLAN/Bluetooth controller.
+allow obake_wcnss_trigger wcnss_device:chr_file rw_file_perms;
+r_dir_file(obake_wcnss_trigger, sysfs)
+allow obake_wcnss_trigger sysfs_obake_wcnss_serial:file w_file_perms;
+
+# Copy the initial WiFi config and set its system:wifi ownership/mode.
+allow obake_wcnss_trigger wifi_data_file:dir rw_dir_perms;
+allow obake_wcnss_trigger wifi_data_file:file create_file_perms;
+allow obake_wcnss_trigger self:capability { chown fowner };
+allow obake_wcnss_trigger persist_file:dir rw_dir_perms;
+allow obake_wcnss_trigger obake_wcnss_persist_config:file r_file_perms;
+
+# The script replaces only these two calibration-selection symlinks.
+allow obake_wcnss_trigger obake_wcnss_calibration_link:lnk_file create_file_perms;
+allow ueventd obake_wcnss_calibration_link:lnk_file r_file_perms;
+type_transition obake_wcnss_trigger persist_file:lnk_file obake_wcnss_calibration_link "WCNSS_qcom_wlan_nv_calibration_persist.bin";
+type_transition obake_wcnss_trigger persist_file:lnk_file obake_wcnss_calibration_link "WCNSS_qcom_wlan_nv_regulatory_persist.bin";
+r_dir_file(obake_wcnss_trigger, firmware_file)
+set_prop(obake_wcnss_trigger, wifi_prop)

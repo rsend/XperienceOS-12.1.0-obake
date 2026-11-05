@@ -1,0 +1,23 @@
+type adspd, domain;
+type adspd_exec, exec_type, file_type;
+type adspd_device, dev_type;
+type adspd_data_file, file_type, data_file_type;
+type adspd_socket, file_type;
+type sysfs_adspd, fs_type, sysfs_type;
+type adspd_prop, property_type;
+
+init_daemon_domain(adspd)
+
+# init labels this inherited control socket through file_contexts.
+allow adspd adspd_socket:sock_file { getattr read write };
+# The daemon mmaps the C55 firmware from /system/etc/firmware.
+r_dir_file(adspd, firmware_file)
+
+allow adspd adspd_device:chr_file rw_file_perms;
+allow adspd adspd_data_file:dir create_dir_perms;
+allow adspd adspd_data_file:file create_file_perms;
+allow adspd input_device:dir search;
+allow adspd input_device:chr_file rw_file_perms;
+r_dir_file(adspd, sysfs)
+allow adspd sysfs_adspd:file rw_file_perms;
+set_prop(adspd, adspd_prop)

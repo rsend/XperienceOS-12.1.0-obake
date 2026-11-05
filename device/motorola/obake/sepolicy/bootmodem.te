@@ -1,0 +1,13 @@
+# The legacy helper holds an AF_MSM_IPC socket to wake the modem, then
+# waits for its PIL reference count. It neither writes sysfs nor provisions IMS.
+type bootmodem, domain;
+type bootmodem_exec, exec_type, file_type;
+
+init_daemon_domain(bootmodem)
+
+# Read the PIL bus links and name/count attributes at their canonical targets.
+# Preserve existing sysfs labels used by the other legacy vendor daemons.
+r_dir_file(bootmodem, sysfs)
+
+# The binary imports socket/close, not bind/connect/ioctl or packet I/O.
+allow bootmodem self:socket create;

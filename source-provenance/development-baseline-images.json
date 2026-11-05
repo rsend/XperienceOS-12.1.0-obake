@@ -1,0 +1,30 @@
+{
+  "validation": "clean build after trimming; resumed after host OOM without restoring removed prebuilts",
+  "product": "xpe_obake-user",
+  "targets": [
+    "bootimage",
+    "systemimage",
+    "recoveryimage"
+  ],
+  "build_fingerprint": "Motorola/xpe_obake/obake:8.1.0/OPM1.171019.011/a1373803d8:user/test-keys",
+  "artifacts": [
+    {
+      "path": "out/target/product/obake/boot.img",
+      "size_bytes": 6600704,
+      "sha256": "0023be0d668ecd4de1df034b7af839f4600a854b5610578d26c6dc8239a7ab2a",
+      "modified_utc": "2026-11-02T22:00:00.987739+00:00"
+    },
+    {
+      "path": "out/target/product/obake/system.img",
+      "size_bytes": 858249152,
+      "sha256": "c123c9d5574c436f290b6b77535d1407504da77454f4a2d11bb1d02da3f13eed",
+      "modified_utc": "2026-11-02T22:09:17.271364+00:00"
+    },
+    {
+      "path": "out/target/product/obake/recovery.img",
+      "size_bytes": 8798208,
+      "sha256": "3c63ce6c1e3b3531f81d90e1a47e8db9289e56fcae9e43294149e5b1953cddef",
+      "modified_utc": "2026-11-02T22:00:19.439157+00:00"
+    }
+  ]
+}

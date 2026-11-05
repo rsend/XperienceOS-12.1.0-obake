@@ -1,0 +1,172 @@
+// Copyright 2017 The Android Open Source Project
+
+// Library used to export files from this directory to other programs in this
+// project.
+cc_library {
+    name: "libext2_misc",
+    host_supported: true,
+
+    target: {
+        windows: {
+            include_dirs: [ "external/e2fsprogs/include/mingw" ],
+            enabled: true
+        },
+    },
+
+    srcs: [
+        "create_inode.c",
+    ],
+    cflags: ["-W", "-Wall"],
+    shared_libs: [
+        "libext2_quota",
+        "libext2fs",
+    ],
+    system_shared_libs: ["libc", "libdl"],
+    export_include_dirs: ["."],
+}
+
+//########################################################################
+// Build mke2fs
+
+cc_binary {
+    name: "mke2fs",
+    host_supported: true,
+
+    srcs: [
+        "mke2fs.c",
+        "mk_hugefiles.c",
+        "default_profile.c",
+    ],
+    required: [
+        "mke2fs.conf",
+    ],
+    cflags: ["-W", "-Wall", "-Wno-macro-redefined"],
+    target: {
+        host: {
+            static_libs: [
+                "libext2_blkid",
+                "libext2_misc",
+                "libext2_uuid",
+                "libext2_quota",
+                "libext2_com_err",
+                "libext2_e2p",
+                "libext2fs",
+                "libsparse",
+                "libbase",
+                "libz",
+            ],
+        },
+        windows: {
+            include_dirs: [ "external/e2fsprogs/include/mingw" ],
+            cflags: ["-D_POSIX", "-D__USE_MINGW_ALARM"],
+            ldflags: ["-static"],
+            host_ldlibs: ["-lws2_32"],
+            enabled: true
+        },
+        android: {
+            shared_libs: [
+                "libext2fs",
+                "libext2_blkid",
+                "libext2_misc",
+                "libext2_uuid",
+                "libext2_quota",
+                "libext2_com_err",
+                "libext2_e2p",
+            ],
+        },
+    },
+    stl: "libc++_static",
+    include_dirs: ["external/e2fsprogs/e2fsck"],
+}
+
+
+
+//##########################################################################
+// Build tune2fs
+
+cc_defaults {
+    name: "tune2fs-defaults",
+    srcs: [
+        "tune2fs.c",
+    ],
+    cflags: [
+        "-W",
+        "-Wall",
+        "-DNO_RECOVERY",
+        "-Wno-macro-redefined",
+    ],
+    include_dirs: ["external/e2fsprogs/e2fsck"],
+}
+
+tune2fs_libs = [
+    "libext2_com_err",
+    "libext2_blkid",
+    "libext2_quota",
+    "libext2_uuid",
+    "libext2_e2p",
+    "libext2fs",
+]
+
+cc_binary {
+    name: "tune2fs",
+    host_supported: true,
+    defaults: ["tune2fs-defaults"],
+
+    shared_libs: tune2fs_libs,
+    system_shared_libs: ["libc", "libdl"],
+}
+
+
+
+
+
+//########################################################################
+// Build badblocks
+
+
+
+//########################################################################
+// Build chattr
+
+
+
+//########################################################################
+// Build lsattr
+
+
+
+lsattr_libs = [
+    "libext2_com_err",
+    "libext2_e2p",
+]
+
+
+
+
+
+//########################################################################
+// Build blkid
+
+cc_binary {
+    name: "blkid",
+
+    srcs: ["blkid.c"],
+    cflags: ["-W", "-Wall", "-Wno-macro-redefined"],
+    shared_libs: [
+        "libext2fs",
+        "libext2_blkid",
+        "libext2_com_err",
+        "libext2_e2p",
+    ],
+    system_shared_libs: ["libc", "libdl"],
+}
+
+//########################################################################
+// Build e4crypt
+
+
+
+//##########################################################################
+// Build e2image
+
+

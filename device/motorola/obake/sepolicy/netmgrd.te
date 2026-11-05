@@ -1,0 +1,6 @@
+# SU6-7.7 libdsutils invokes /system/bin/sh through bionic popen() for
+# netmgrd's interface and routing commands. Keep the child in netmgrd.
+allow netmgrd shell_exec:file rx_file_perms;
+
+# The legacy shell commands also resolve utilities through /system/bin/toybox.
+allow netmgrd toolbox_exec:file rx_file_perms;

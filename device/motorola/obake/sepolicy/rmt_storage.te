@@ -1,0 +1,6 @@
+# The stock daemon requests realtime I/O priority through ioprio_set().
+allow rmt_storage self:capability sys_admin;
+
+# Read the factory modem configuration on the read-only /fsg mount.
+allow rmt_storage firmware_file:dir search;
+allow rmt_storage firmware_file:file r_file_perms;

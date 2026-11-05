@@ -1,0 +1,156 @@
+# Motorola Obake SU6-7.7 native IMS daemon chain.
+#
+# This integrated chain provides the native QMI/data/RTP services, the bounded
+# DPL registration bootstrap, and the LTE preservation guard. Android exposes
+# IMS readiness separately and only after fresh IMSA/VoIP confirmation. The
+# persistent controls provide explicit rollback without changing ordinary
+# cellular or LTE data.
+
+service imsqmidaemon /vendor/bin/imsqmidaemon
+    class main
+    user system
+    socket ims_qmid stream 0660 system radio
+    group 3015 radio net_raw log diag 2950
+    setenv LD_LIBRARY_PATH /system/lib/radio-su6-77:/vendor/lib:/system/lib
+    setenv LD_PRELOAD /system/lib/libshim_log.so
+    disabled
+    oneshot
+
+service imsdatadaemon /vendor/bin/imsdatadaemon
+    class main
+    # Stock starts this daemon as root; it drops privileges after DSI has
+    # configured the IMS interface and routes.
+    user root
+    socket ims_datad stream 0660 system radio
+    group 3015 system wifi radio inet net_admin net_raw log diag 2950
+    # Do not pre-restrict this root service with init's capabilities directive.
+    # The legacy daemon uses prctl/setuid/capset to perform its own one-way
+    # privilege drop; an init-only NET_BIND_SERVICE set makes setuid fail.
+    setenv LD_LIBRARY_PATH /system/lib/radio-su6-77:/vendor/lib:/system/lib
+    setenv LD_PRELOAD /system/lib/libshim_log.so
+    disabled
+    oneshot
+
+service ims_rtp_daemon /vendor/bin/ims_rtp_daemon
+    class main
+    user system
+    socket ims_rtpd stream 0660 system radio
+    # This OEM AID is registered as oem_2950 rather than qcom_diag on Oreo.
+    # Keep the numeric form so init does not stop parsing before net_raw;
+    # AF_MSM_IPC service registration requires membership in that group.
+    group 3015 radio diag 2950 inet net_raw log
+    capabilities NET_BIND_SERVICE
+    setenv LD_LIBRARY_PATH /system/lib/radio-su6-77:/vendor/lib:/system/lib
+    setenv LD_PRELOAD /system/lib/libshim_log.so:/system/lib/libshim_ims_openssl_legacy.so
+    disabled
+    oneshot
+
+# Native replacement for the obsolete Dalvik RCS bootstrap. It is kept in a
+# dedicated domain and starts only after the legacy IMS data daemon reports
+# readiness. The preload repairs link-local IPv6 scope/routing for DPL.
+service ims_dpl_boot /system/bin/ims_dpl_bootstrapd serve
+    class main
+    user root
+    group 3015 system radio inet net_admin net_raw log diag 2950
+    setenv LD_LIBRARY_PATH /system/lib/radio-su6-77:/vendor/lib:/system/lib
+    setenv LD_PRELOAD /system/lib/libims_dpl_trace.so:/system/lib/libshim_ims_openssl_legacy.so
+    disabled
+    oneshot
+
+# Preserve LTE while IMS voice service is being acquired. This uses only the
+# SU6-7.7 NAS/IMSA interfaces whose installed IDL contract is verified by the
+# helper before it can write the power-cycle-only usage preference.
+service ims_lte_guard /system/bin/ims_lte_guard
+    class main
+    user radio
+    group radio system diag 2950
+    setenv LD_LIBRARY_PATH /system/lib/radio-su6-77:/vendor/lib:/system/lib
+    setenv LD_PRELOAD /system/lib/libshim_log.so
+    disabled
+    onrestart setprop sys.ims.voice.ready 0
+    onrestart setprop sys.ims.voice.status source_restarting
+
+on property:init.svc.qmuxd=running && property:persist.ims.native.enabled=1 && property:persist.ims.lte_guard.enabled=1
+    start ims_lte_guard
+
+on property:persist.ims.native.enabled=1 && property:init.svc.qmuxd=running && property:persist.ims.lte_guard.enabled=1
+    start ims_lte_guard
+
+on property:persist.ims.lte_guard.enabled=1 && property:init.svc.qmuxd=running && property:persist.ims.native.enabled=1
+    start ims_lte_guard
+
+on property:persist.ims.lte_guard.enabled=0
+    stop ims_lte_guard
+
+on property:init.svc.ims_lte_guard=stopped
+    setprop sys.ims.voice.ready 0
+    setprop sys.ims.voice.status source_stopped
+
+# Start only after the SU6-7.7 QMUX transport is available. Either property
+# may be the last one to transition during boot, so both triggers are needed.
+on property:persist.ims.native.enabled=1 && property:init.svc.qmuxd=running
+    setprop sys.ims.native.status starting_qmi
+    start imsqmidaemon
+
+# Preserve the daemon-owned stock readiness chain while requiring the rollback
+# switch at every boundary. Stale status values therefore cannot restart a
+# downstream daemon after IMS has been disabled.
+on property:sys.ims.QMI_DAEMON_STATUS=1 && property:persist.ims.native.enabled=1
+    setprop sys.ims.native.status qmi_ready
+    start imsdatadaemon
+
+on property:sys.ims.DATA_DAEMON_STATUS=1 && property:persist.ims.native.enabled=1
+    setprop sys.ims.native.status data_ready
+    start ims_rtp_daemon
+
+on property:sys.ims.DATA_DAEMON_STATUS=1 && property:persist.ims.native.enabled=1 && property:persist.ims.dpl.bootstrap=1
+    setprop sys.ims.dpl.status starting
+    start ims_dpl_boot
+
+on property:init.svc.ims_rtp_daemon=running && property:persist.ims.native.enabled=1
+    setprop sys.ims.native.status native_ready
+
+# Explicit runtime rollback. Stop in reverse dependency order and clear the
+# daemon readiness properties so the chain cannot restart from stale state.
+on property:persist.ims.native.enabled=0
+    stop ims_lte_guard
+    stop ims_dpl_boot
+    stop ims_rtp_daemon
+    stop imsdatadaemon
+    stop imsqmidaemon
+    setprop sys.ims.DATA_DAEMON_STATUS 0
+    setprop sys.ims.QMI_DAEMON_STATUS 0
+    setprop sys.ims.native.status disabled
+
+on property:persist.ims.dpl.bootstrap=0
+    stop ims_dpl_boot
+    exec - root net_admin -- /system/bin/ims_dpl_bootstrapd cleanup
+    setprop sys.ims.dpl.status disabled
+
+on property:sys.ims.DATA_DAEMON_STATUS=0
+    stop ims_dpl_boot
+    exec - root net_admin -- /system/bin/ims_dpl_bootstrapd cleanup
+    setprop sys.ims.dpl.status waiting_for_data
+
+on property:init.svc.ims_dpl_boot=stopped
+    exec - root net_admin -- /system/bin/ims_dpl_bootstrapd cleanup
+
+# oneshot bounds crash behavior: a failed service stays down until the user
+# toggles the control property or explicitly starts it for diagnostics.
+on property:init.svc.imsqmidaemon=stopped && property:persist.ims.native.enabled=1
+    stop ims_rtp_daemon
+    stop imsdatadaemon
+    setprop sys.ims.DATA_DAEMON_STATUS 0
+    setprop sys.ims.QMI_DAEMON_STATUS 0
+    setprop sys.ims.native.status failed_qmi
+
+# Preserve the upstream failure as the root cause.  A QMI failure also stops
+# this dependent service, but DATA_DAEMON_STATUS is only valid while QMI is up.
+on property:init.svc.imsdatadaemon=stopped && property:persist.ims.native.enabled=1 && property:sys.ims.QMI_DAEMON_STATUS=1
+    stop ims_rtp_daemon
+    setprop sys.ims.DATA_DAEMON_STATUS 0
+    setprop sys.ims.native.status failed_data
+
+# Likewise, do not let RTP's dependent stop overwrite failed_data.
+on property:init.svc.ims_rtp_daemon=stopped && property:persist.ims.native.enabled=1 && property:sys.ims.DATA_DAEMON_STATUS=1
+    setprop sys.ims.native.status failed_rtp

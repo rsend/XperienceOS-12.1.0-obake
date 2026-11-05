@@ -1,5 +1,0 @@
-com/android/tools/annotations/24.5.0/NOTICE
-com/android/tools/external/com-intellij/NOTICE
-com/android/tools/external/lombok/lombok-ast/0.2.2/NOTICE
-com/android/tools/external/lombok/lombok-ast/0.2.3/NOTICE
-org/jetbrains/kotlin/NOTICE

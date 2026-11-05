@@ -1,3 +1,0 @@
-NOTICE
-lib/gcc/i686-apple-darwin10/4.2.1/include/README
-lib/gcc/i686-apple-darwin11/4.2.1/include/README

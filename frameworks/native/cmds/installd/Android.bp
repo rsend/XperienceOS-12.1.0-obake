@@ -1,0 +1,54 @@
+cc_defaults {
+    name: "installd_defaults",
+
+    cflags: [
+        "-Wall",
+        "-Werror",
+    ],
+    srcs: [
+        "CacheItem.cpp",
+        "CacheTracker.cpp",
+        "InstalldNativeService.cpp",
+        "dexopt.cpp",
+        "globals.cpp",
+        "utils.cpp",
+        "binder/android/os/IInstalld.aidl",
+    ],
+    shared_libs: [
+        "libbase",
+        "libbinder",
+        "libcutils",
+        "liblog",
+        "liblogwrap",
+        "libselinux",
+        "libutils",
+    ],
+
+    clang: true,
+}
+
+//
+// Static library used in testing and executable
+//
+
+
+
+//
+// Executable
+//
+
+cc_binary {
+    name: "installd",
+    defaults: ["installd_defaults"],
+    srcs: ["installd.cpp"],
+
+    static_libs: ["libdiskusage"],
+
+    init_rc: ["installd.rc"],
+}
+
+// OTA chroot tool
+
+
+
+subdirs = []

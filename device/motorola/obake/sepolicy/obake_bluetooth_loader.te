@@ -1,0 +1,17 @@
+# Legacy SMD controller initialization, running as bluetooth (not root).
+# The init service uses an interpreter, so its domain is selected explicitly.
+type obake_bluetooth_loader, domain;
+type obake_bluetooth_helper_exec, exec_type, vendor_file_type, file_type;
+
+domain_trans(init, shell_exec, obake_bluetooth_loader)
+allow obake_bluetooth_loader shell_exec:file execute_no_trans;
+allow obake_bluetooth_loader vendor_file:file r_file_perms;
+allow obake_bluetooth_loader toolbox_exec:file rx_file_perms;
+allow obake_bluetooth_loader obake_bluetooth_helper_exec:file rx_file_perms;
+allow obake_bluetooth_loader self:fifo_file rw_file_perms;
+allow obake_bluetooth_loader smd_device:chr_file rw_file_perms;
+r_dir_file(obake_bluetooth_loader, sysfs)
+allow obake_bluetooth_loader sysfs_bluetooth_writable:file rw_file_perms;
+allow obake_bluetooth_loader persist_file:dir search;
+allow obake_bluetooth_loader persist_bluetooth_file:file r_file_perms;
+set_prop(obake_bluetooth_loader, bluetooth_prop)

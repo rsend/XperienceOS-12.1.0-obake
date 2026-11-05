@@ -1,0 +1,14 @@
+type initial_attach_apnd, domain;
+type initial_attach_apnd_exec, exec_type, file_type;
+type initial_attach_apnd_socket, file_type;
+
+init_daemon_domain(initial_attach_apnd)
+
+# The SU6 QDP/WDS stack reaches the modem through qmuxd and initializes
+# libdiag as an indirect dependency.
+qmux_socket(initial_attach_apnd)
+diag_use(initial_attach_apnd)
+
+# The telephony framework runs in the radio domain and is the only non-root
+# client permitted by the daemon's peer-credential check.
+unix_socket_connect(radio, initial_attach_apnd, initial_attach_apnd)

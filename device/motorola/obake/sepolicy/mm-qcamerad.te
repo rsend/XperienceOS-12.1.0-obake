@@ -1,0 +1,14 @@
+# The legacy daemon binds /data/cam_socket%d when a camera is opened.
+# Cover logical camera IDs 0/1 and the observed front-camera video ID 2.
+# Named transitions label new sockets immediately, without restorecon.
+type_transition mm-qcamerad system_data_file:sock_file camera_socket "cam_socket0";
+type_transition mm-qcamerad system_data_file:sock_file camera_socket "cam_socket1";
+type_transition mm-qcamerad system_data_file:sock_file camera_socket "cam_socket2";
+
+# bind/unlink need parent name operations, but no access to ordinary /data files.
+allow mm-qcamerad system_data_file:dir { write add_name remove_name };
+allow mm-qcamerad camera_socket:sock_file { create unlink };
+
+# The legacy HAL runs in mediaserver and sends buffer FDs to this datagram socket.
+allow mediaserver camera_socket:sock_file write;
+allow mediaserver mm-qcamerad:unix_dgram_socket sendto;

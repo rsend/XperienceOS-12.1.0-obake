@@ -1,0 +1,15 @@
+# Oreo marks init domain transitions AT_SECURE. The legacy Motorola/Qualcomm
+# binaries below need their configured linker shims or library search paths;
+# AT_SECURE discards LD_SHIM_LIBS, LD_PRELOAD, and LD_LIBRARY_PATH.
+allow init {
+    rild
+    rmt_storage
+    thermal-engine
+    time_daemon
+    ims
+    hal_imsrtp
+    ims_lte_guard
+    ims_dpl_bootstrapd
+    qmuxd
+    netmgrd
+}:process noatsecure;

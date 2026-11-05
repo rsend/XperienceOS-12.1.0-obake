@@ -1,7 +1,0 @@
-COPYING
-COPYING.LIB
-COPYING.RUNTIME
-COPYING3
-COPYING3.LIB
-NOTICE
-lib/gcc/aarch64-linux-android/4.9.x/include-fixed/README

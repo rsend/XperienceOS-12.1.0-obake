@@ -1,0 +1,24 @@
+cc_library_static {
+    name: "libpdx",
+    clang: true,
+    cflags: [
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-DLOG_TAG=\"libpdx\"",
+        "-DTRACE=0",
+    ],
+    export_include_dirs: ["private"],
+    local_include_dirs: ["private"],
+    srcs: [
+        "client.cpp",
+        "service.cpp",
+        "service_dispatcher.cpp",
+        "status.cpp",
+    ],
+}
+
+
+
+// Code analysis target.
+

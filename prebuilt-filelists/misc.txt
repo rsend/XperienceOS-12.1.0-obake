@@ -36,7 +36,6 @@ android-x86_64/gdbserver64/NOTICE
 android-x86_64/gdbserver64/README.txt
 android-x86_64/gdbserver64/gdbserver64
 android-x86_64/gdbserver64/manifest_2824841.xml
-common/android-support-test/Android.mk
 common/antlr/Android.mk
 common/antlr/LICENSE
 common/antlr/MODULE_LICENSE_BSD

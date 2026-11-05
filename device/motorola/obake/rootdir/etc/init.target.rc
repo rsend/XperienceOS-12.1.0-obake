@@ -1,0 +1,50 @@
+# Copyright (c) 2009-2013, The Linux Foundation. All rights reserved.
+#
+# Redistribution and use in source and binary forms, with or without
+# modification, are permitted provided that the following conditions are met:
+#     * Redistributions of source code must retain the above copyright
+#       notice, this list of conditions and the following disclaimer.
+#     * Redistributions in binary form must reproduce the above copyright
+#       notice, this list of conditions and the following disclaimer in the
+#       documentation and/or other materials provided with the distribution.
+#     * Neither the name of The Linux Foundation nor
+#       the names of its contributors may be used to endorse or promote
+#       products derived from this software without specific prior written
+#       permission.
+#
+# THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+# AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+# IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+# NON-INFRINGEMENT ARE DISCLAIMED.  IN NO EVENT SHALL THE COPYRIGHT OWNER OR
+# CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
+# EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+# PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS;
+# OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,
+# WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR
+# OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF
+# ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+#
+
+on init
+    # The legacy kernel exposes these nodes with the generic sysfs label.
+    # Apply Oreo's labels before rmt_storage and other core services start.
+    restorecon /sys/power/wake_lock /sys/power/wake_unlock
+    restorecon /sys/module/wlan/parameters/fwpath
+    restorecon /sys/devices/platform/wcnss_wlan.0/serial_number
+    restorecon /sys/module/hci_smd/parameters/hcismd_set
+    restorecon /sys/devices/platform/bt_power.0/rfkill/rfkill0/state
+
+on post-fs
+    restorecon /persist/.bt_nv.bin
+    restorecon /persist/WCNSS_qcom_cfg.ini
+    restorecon /persist/WCNSS_qcom_wlan_nv_calibration_persist.bin /persist/WCNSS_qcom_wlan_nv_regulatory_persist.bin
+    # Obake setup script
+    exec /init.obake.sh
+
+# The root SU6-7.7 RIL creates its private IMS socket with init's 077 umask.
+# Repair only that already-created endpoint when the phone-UID adapter reports
+# EACCES, then reset the trigger so a later RIL restart can request it again.
+on property:sys.ims.rild_socket_fix=1
+    chown root radio /dev/socket/qmux_radio/rild_ims
+    chmod 0660 /dev/socket/qmux_radio/rild_ims
+    setprop sys.ims.rild_socket_fix 0

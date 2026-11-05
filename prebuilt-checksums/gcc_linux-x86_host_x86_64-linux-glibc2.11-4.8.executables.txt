@@ -1,2 +1,0 @@
-build-lucid-multilib-toolchain.sh
-libexec/gcc/x86_64-linux/4.8/install-tools/fixinc.sh

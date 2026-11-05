@@ -1,0 +1,29 @@
+Standalone source staging changes
+
+All integrated project source is copied from the working tree, including local
+tracked changes and untracked inputs. Nested Git databases, .gitmodules,
+.gitignore, and .gitattributes are omitted so the new repository can track
+ordinary source files without inherited filters or ignored production inputs.
+The root .gitattributes disables external Git filters and newline conversion.
+The 11 original gitlinks were unpopulated in the validated development build.
+Their identities are recorded; no submodule initialization is required.
+
+Excluded: .repo, out, the private reconstruction archive, FIXES diagnostics,
+virtual credential/config directories, and historical development-only root
+notes/rom-build.sh. The unsupported Gradle SDK distributions in
+tools/external/gradle are omitted: no references appear in the recorded image
+commands or dependency graph, and one jar exceeds GitHub's regular-file limit.
+Historical prebuilts are restored by the pinned dependency installer.
+
+setup_env.sh derives paths from the checked-out root, selects xpe_obake-user,
+sets a local build number without requiring Git, selects OpenJDK 8 and Python
+2, disables the Obake permissive override, and enables neverallow checking.
+jack.sh supports first-time checkout-local installation and compiler setup.
+The optional WORKSPACE/build_env/image-auto-bits.mk include is removed from
+vendor/xperience/config/common.mk so product contents cannot depend on an
+external workspace configuration.
+
+These are staging/build-environment changes. Production device, framework,
+HAL, policy, kernel, and vendor fixes otherwise preserve the working source.
+No files are linked to the original development checkout. Source/image
+validation of this standalone copy remains required before publication.

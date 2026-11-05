@@ -1,0 +1,2 @@
+# Preserve the integrated source bytes and do not depend on Git LFS filters.
+* -text -filter

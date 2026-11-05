@@ -1,0 +1,11 @@
+# The platform-signed adapter shares the phone UID and therefore runs in the
+# radio domain. Permit that trusted domain to publish only the telephony HAL
+# service and connect to the legacy SU6-7.7 rild_ims socket.  Do not use
+# hal_server_domain() here: radio is also an app/network domain, which Oreo's
+# HAL neverallows intentionally prohibit from becoming a general HAL server.
+typeattribute radio hal_telephony_server;
+qmux_socket(radio)
+allow radio self:socket create_socket_perms;
+allowxperm radio self:socket ioctl msm_sock_ipc_ioctls;
+allow radio rild:unix_stream_socket connectto;
+set_prop(radio, ims_radio_adapter_control_prop)

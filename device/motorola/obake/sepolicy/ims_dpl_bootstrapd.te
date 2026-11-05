@@ -1,0 +1,35 @@
+type ims_dpl_bootstrapd, domain;
+type ims_dpl_bootstrapd_exec, exec_type, file_type;
+
+init_daemon_domain(ims_dpl_bootstrapd)
+
+# The legacy RCS client connects to /dev/socket/ims_qmid in the ims domain.
+unix_socket_connect(ims_dpl_bootstrapd, ims, ims)
+diag_use(ims_dpl_bootstrapd)
+
+# libqmi and the routing helper read the legacy kernel's online CPU mask.
+# Match the existing ims_lte_guard rule; no sysfs writes are needed.
+allow ims_dpl_bootstrapd sysfs:file { getattr open read };
+
+# Read the independent bootstrap/timer/registration rollback switches and
+# publish bounded status/counter properties under sys.ims.*.
+get_prop(ims_dpl_bootstrapd, ims_dpl_control_prop)
+set_prop(ims_dpl_bootstrapd, qcom_ims_prop)
+
+# DPL exchanges link-local IPv6 datagrams with the modem and installs one
+# reserved output-interface rule for Android's per-interface routing table.
+allow ims_dpl_bootstrapd self:capability { net_admin net_raw };
+allow ims_dpl_bootstrapd self:udp_socket create_socket_perms;
+allow ims_dpl_bootstrapd node:udp_socket node_bind;
+allowxperm ims_dpl_bootstrapd self:udp_socket ioctl msm_sock_ipc_ioctls;
+allow ims_dpl_bootstrapd self:netlink_route_socket {
+    create bind read write getattr setopt nlmsg_read nlmsg_write
+};
+allow ims_dpl_bootstrapd self:process { fork sigchld };
+# Oreo's ip helper reads /data/misc/net/rt_tables when resolving table names.
+# It stays in this domain; permit lookup only, not netd's configuration writes.
+allow ims_dpl_bootstrapd net_data_file:dir search;
+allow ims_dpl_bootstrapd net_data_file:file r_file_perms;
+allow ims_dpl_bootstrapd system_file:file {
+    read open getattr map execute execute_no_trans
+};

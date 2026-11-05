@@ -12,13 +12,13 @@ targets, and executable permissions are checked before each project is
 installed. Existing conflicting directories are refused. A repeated run
 verifies an installation with matching revision and inventory markers.
 
-The reduced dependency set contains 48,536 retained files from 37 pinned
-projects, including small build-control/license remnants from otherwise
-pruned projects. All required files match the tool set used for the successful
-xpe_obake-user bootimage, systemimage, and recoveryimage build. The script
-may download larger Git object packs, but only the selected files are installed.
-The installed dependency tree occupies approximately 4.09 GiB on the current
-ext4 host; allocated size varies by filesystem.
+The reduced dependency set contains 44,133 inventory entries from 18 pinned
+projects. Unused platform/compiler projects and test-module metadata have been
+removed following source reduction. Installed hashes, links, and executable
+modes pass verification. Required image compile commands remain unchanged.
+Selected regular-file payload totals approximately 3.89 GiB; allocated size
+varies. Fetching a pinned Git commit may download a larger object pack than
+the inventory copied into the checkout.
 
 Only two local prebuilt overrides exist: sdk/tools/jack-admin and
 sdk/tools/jack-tls-legacy.security. They preserve the checkout-local Jack

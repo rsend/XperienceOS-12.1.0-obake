@@ -1,0 +1,19 @@
+Trimmed release validation
+
+Target: xpe_obake-user; Ubuntu 20.04 amd64; SELinux enforcing.
+Configuration generation and all-three-image dependency dry run pass.
+Installed target-path difference: removed Widevine engine only.
+C/C++ compile commands: 20,606 unchanged.
+Jack compile commands: 278 unchanged.
+Kernel configuration: byte-identical before/after trimming.
+Kernel preparation/exported headers and compiler dependency checks pass.
+Known private Widevine/service-account material remains excluded.
+The remaining Dialer transcription API default is documented in BUILD_SCOPE.md.
+
+The user successfully built boot.img, system.img, and recovery.img after trim
+repairs, resuming incrementally between repairs. Output sizes and hashes are
+recorded in IMAGE_BUILD_VALIDATION.json. A further build from clean output and
+on-device validation have not yet been checked. No image build was run by the
+assistant.
+
+Audit records and recoverable exclusions are outside SOURCE_RELEASE.

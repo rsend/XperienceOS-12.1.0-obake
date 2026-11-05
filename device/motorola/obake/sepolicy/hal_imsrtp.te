@@ -1,0 +1,5 @@
+# The stock RTP daemon's QMI initialization probes the online CPU mask.
+allow hal_imsrtp sysfs:file { getattr open read };
+
+# libdiag is required by the SU6-7.7 RTP closure in user builds too.
+diag_use(hal_imsrtp)

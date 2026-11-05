@@ -1,0 +1,280 @@
+project	path	change
+bionic	libc/Android.bp	modified or added
+bionic	libc/bionic/pthread_internal.cpp	modified or added
+bionic	linker/Android.bp	modified or added
+bionic	linker/linker.cpp	modified or added
+build/make	core/Makefile	modified or added
+build/make	envsetup.sh	modified or added
+build/make	tools/releasetools/build_image.py	modified or added
+device/motorola/msm8960dt-common	BoardConfigCommon.mk	modified or added
+device/motorola/msm8960dt-common	camera/CameraWrapper.cpp	modified or added
+device/motorola/msm8960dt-common	configs/audio_platform_info.xml	modified or added
+device/motorola/msm8960dt-common	configs/media_codecs.xml	modified or added
+device/motorola/msm8960dt-common	configs/media_codecs_performance.xml	modified or added
+device/motorola/msm8960dt-common	configs/media_profiles.xml	modified or added
+device/motorola/msm8960dt-common	configs/mixer_paths.xml	modified or added
+device/motorola/msm8960dt-common	fs_config/file_caps.txt	modified or added
+device/motorola/msm8960dt-common	libshims/Android.mk	modified or added
+device/motorola/msm8960dt-common	libshims/GraphicBuffer.cpp	modified or added
+device/motorola/msm8960dt-common	libshims/moto_ril.c	modified or added
+device/motorola/msm8960dt-common	libshims/sensorlistener/SensorManager.cpp	modified or added
+device/motorola/msm8960dt-common	libshims/sensorlistener/gui/SensorManager.h	modified or added
+device/motorola/msm8960dt-common	mkbootimg.mk	modified or added
+device/motorola/msm8960dt-common	msm8960dt-common.mk	modified or added
+device/motorola/msm8960dt-common	rootdir/Android.mk	modified or added
+device/motorola/msm8960dt-common	rootdir/etc/fstab.qcom	modified or added
+device/motorola/msm8960dt-common	rootdir/etc/init.qcom.bt.sh	modified or added
+device/motorola/msm8960dt-common	rootdir/etc/init.qcom.power.rc	modified or added
+device/motorola/msm8960dt-common	rootdir/etc/init.qcom.rc	modified or added
+device/motorola/msm8960dt-common	rootdir/etc/init.qcom.wifi.sh	modified or added
+device/motorola/msm8960dt-common	system_prop.mk	modified or added
+device/motorola/msm8960dt-common	initial_attach/Android.mk	untracked, ignored, or submodule working file
+device/motorola/msm8960dt-common	initial_attach/initial_attach_apnd.cpp	untracked, ignored, or submodule working file
+device/motorola/msm8960dt-common	initial_attach/initial_attach_apnd.rc	untracked, ignored, or submodule working file
+device/motorola/msm8960dt-common	initial_attach/legacy_initial_attach.cpp	untracked, ignored, or submodule working file
+device/motorola/msm8960dt-common	initial_attach/legacy_initial_attach.h	untracked, ignored, or submodule working file
+device/motorola/msm8960dt-common	libshims/ims_openssl_legacy.c	untracked, ignored, or submodule working file
+device/motorola/msm8960dt-common	libshims/qcopt.cpp	untracked, ignored, or submodule working file
+device/motorola/msm8960dt-common	radio-su6-77.mk	untracked, ignored, or submodule working file
+device/motorola/msm8960dt-common	rootdir/etc/init.ims-native.rc	untracked, ignored, or submodule working file
+device/motorola/msm8960dt-common	sensors/Android.mk	untracked, ignored, or submodule working file
+device/motorola/msm8960dt-common	sensors/SensorsCompat.cpp	untracked, ignored, or submodule working file
+device/motorola/obake	AndroidProducts.mk	modified or added
+device/motorola/obake	BoardConfig.mk	modified or added
+device/motorola/obake	device.mk	modified or added
+device/motorola/obake	init/Android.mk	modified or added
+device/motorola/obake	init/init_obake.cpp	modified or added
+device/motorola/obake	liblight/lights.c	modified or added
+device/motorola/obake	overlay/frameworks/base/core/res/res/values/config.xml	modified or added
+device/motorola/obake	rootdir/Android.mk	modified or added
+device/motorola/obake	rootdir/etc/init.target.rc	modified or added
+device/motorola/obake	system.prop	modified or added
+device/motorola/obake	xpe.mk	modified or added
+device/motorola/obake	ims/Android.mk	untracked, ignored, or submodule working file
+device/motorola/obake	ims/qti-vzw-ims-internal.xml	untracked, ignored, or submodule working file
+device/motorola/obake	imscapture/Android.mk	untracked, ignored, or submodule working file
+device/motorola/obake	imsdpl/Android.mk	untracked, ignored, or submodule working file
+device/motorola/obake	imsdpl/ims_dpl_bootstrap.cpp	untracked, ignored, or submodule working file
+device/motorola/obake	imsdpl/ims_dpl_trace.cpp	untracked, ignored, or submodule working file
+device/motorola/obake	imsdpl/ims_initial_registration.cpp	untracked, ignored, or submodule working file
+device/motorola/obake	imsdpl/ims_initial_registration.h	untracked, ignored, or submodule working file
+device/motorola/obake	imsdpl/ims_long_timer_bridge.cpp	untracked, ignored, or submodule working file
+device/motorola/obake	imsdpl/ims_long_timer_bridge.h	untracked, ignored, or submodule working file
+device/motorola/obake	imsprofile/Android.mk	untracked, ignored, or submodule working file
+device/motorola/obake	imsradio/Android.mk	untracked, ignored, or submodule working file
+device/motorola/obake	imsradio/AndroidManifest.xml	untracked, ignored, or submodule working file
+device/motorola/obake	imsradio/ims_lte_guard.cpp	untracked, ignored, or submodule working file
+device/motorola/obake	imsradio/ims_lte_recovery.h	untracked, ignored, or submodule working file
+device/motorola/obake	imsradio/ims_qipcall_policy.cpp	untracked, ignored, or submodule working file
+device/motorola/obake	imsradio/res/values/strings.xml	untracked, ignored, or submodule working file
+device/motorola/obake	imsradio/src/org/xperience/imsradio/BootReceiver.java	untracked, ignored, or submodule working file
+device/motorola/obake	imsradio/src/org/xperience/imsradio/ImsRadioAdapterService.java	untracked, ignored, or submodule working file
+device/motorola/obake	imsradio/src/org/xperience/imsradio/ImsRadioApplication.java	untracked, ignored, or submodule working file
+device/motorola/obake	imsradio/src/org/xperience/imsradio/LegacyImsQmi.java	untracked, ignored, or submodule working file
+device/motorola/obake	imsradio/src/org/xperience/imsradio/LegacyImsSocket.java	untracked, ignored, or submodule working file
+device/motorola/obake	imsradio/src/vendor/qti/hardware/radio/ims/V1_0/AddressInfo.java	untracked, ignored, or submodule working file
+device/motorola/obake	imsradio/src/vendor/qti/hardware/radio/ims/V1_0/BlockReasonDetails.java	untracked, ignored, or submodule working file
+device/motorola/obake	imsradio/src/vendor/qti/hardware/radio/ims/V1_0/BlockReasonType.java	untracked, ignored, or submodule working file
+device/motorola/obake	imsradio/src/vendor/qti/hardware/radio/ims/V1_0/BlockStatus.java	untracked, ignored, or submodule working file
+device/motorola/obake	imsradio/src/vendor/qti/hardware/radio/ims/V1_0/CallDetails.java	untracked, ignored, or submodule working file
+device/motorola/obake	imsradio/src/vendor/qti/hardware/radio/ims/V1_0/CallDomain.java	untracked, ignored, or submodule working file
+device/motorola/obake	imsradio/src/vendor/qti/hardware/radio/ims/V1_0/CallFailCause.java	untracked, ignored, or submodule working file
+device/motorola/obake	imsradio/src/vendor/qti/hardware/radio/ims/V1_0/CallFailCauseResponse.java	untracked, ignored, or submodule working file
+device/motorola/obake	imsradio/src/vendor/qti/hardware/radio/ims/V1_0/CallForwardInfo.java	untracked, ignored, or submodule working file
+device/motorola/obake	imsradio/src/vendor/qti/hardware/radio/ims/V1_0/CallFwdTimerInfo.java	untracked, ignored, or submodule working file
+device/motorola/obake	imsradio/src/vendor/qti/hardware/radio/ims/V1_0/CallInfo.java	untracked, ignored, or submodule working file
+device/motorola/obake	imsradio/src/vendor/qti/hardware/radio/ims/V1_0/CallModifyFailCause.java	untracked, ignored, or submodule working file
+device/motorola/obake	imsradio/src/vendor/qti/hardware/radio/ims/V1_0/CallModifyInfo.java	untracked, ignored, or submodule working file
+device/motorola/obake	imsradio/src/vendor/qti/hardware/radio/ims/V1_0/CallState.java	untracked, ignored, or submodule working file
+device/motorola/obake	imsradio/src/vendor/qti/hardware/radio/ims/V1_0/CallType.java	untracked, ignored, or submodule working file
+device/motorola/obake	imsradio/src/vendor/qti/hardware/radio/ims/V1_0/CbNumInfo.java	untracked, ignored, or submodule working file
+device/motorola/obake	imsradio/src/vendor/qti/hardware/radio/ims/V1_0/CbNumListInfo.java	untracked, ignored, or submodule working file
+device/motorola/obake	imsradio/src/vendor/qti/hardware/radio/ims/V1_0/ClipProvisionStatus.java	untracked, ignored, or submodule working file
+device/motorola/obake	imsradio/src/vendor/qti/hardware/radio/ims/V1_0/ClipStatus.java	untracked, ignored, or submodule working file
+device/motorola/obake	imsradio/src/vendor/qti/hardware/radio/ims/V1_0/ClirInfo.java	untracked, ignored, or submodule working file
+device/motorola/obake	imsradio/src/vendor/qti/hardware/radio/ims/V1_0/ColrInfo.java	untracked, ignored, or submodule working file
+device/motorola/obake	imsradio/src/vendor/qti/hardware/radio/ims/V1_0/ConfParticipantOperation.java	untracked, ignored, or submodule working file
+device/motorola/obake	imsradio/src/vendor/qti/hardware/radio/ims/V1_0/ConferenceCallState.java	untracked, ignored, or submodule working file
+device/motorola/obake	imsradio/src/vendor/qti/hardware/radio/ims/V1_0/ConferenceInfo.java	untracked, ignored, or submodule working file
+device/motorola/obake	imsradio/src/vendor/qti/hardware/radio/ims/V1_0/ConfigFailureCause.java	untracked, ignored, or submodule working file
+device/motorola/obake	imsradio/src/vendor/qti/hardware/radio/ims/V1_0/ConfigInfo.java	untracked, ignored, or submodule working file
+device/motorola/obake	imsradio/src/vendor/qti/hardware/radio/ims/V1_0/ConfigItem.java	untracked, ignored, or submodule working file
+device/motorola/obake	imsradio/src/vendor/qti/hardware/radio/ims/V1_0/DeflectRequestInfo.java	untracked, ignored, or submodule working file
+device/motorola/obake	imsradio/src/vendor/qti/hardware/radio/ims/V1_0/DialRequest.java	untracked, ignored, or submodule working file
+device/motorola/obake	imsradio/src/vendor/qti/hardware/radio/ims/V1_0/DtmfInfo.java	untracked, ignored, or submodule working file
+device/motorola/obake	imsradio/src/vendor/qti/hardware/radio/ims/V1_0/EctType.java	untracked, ignored, or submodule working file
+device/motorola/obake	imsradio/src/vendor/qti/hardware/radio/ims/V1_0/ExplicitCallTransferInfo.java	untracked, ignored, or submodule working file
+device/motorola/obake	imsradio/src/vendor/qti/hardware/radio/ims/V1_0/Extra.java	untracked, ignored, or submodule working file
+device/motorola/obake	imsradio/src/vendor/qti/hardware/radio/ims/V1_0/ExtraType.java	untracked, ignored, or submodule working file
+device/motorola/obake	imsradio/src/vendor/qti/hardware/radio/ims/V1_0/FacilityType.java	untracked, ignored, or submodule working file
+device/motorola/obake	imsradio/src/vendor/qti/hardware/radio/ims/V1_0/HandoverInfo.java	untracked, ignored, or submodule working file
+device/motorola/obake	imsradio/src/vendor/qti/hardware/radio/ims/V1_0/HandoverType.java	untracked, ignored, or submodule working file
+device/motorola/obake	imsradio/src/vendor/qti/hardware/radio/ims/V1_0/HangupRequestInfo.java	untracked, ignored, or submodule working file
+device/motorola/obake	imsradio/src/vendor/qti/hardware/radio/ims/V1_0/IImsRadio.java	untracked, ignored, or submodule working file
+device/motorola/obake	imsradio/src/vendor/qti/hardware/radio/ims/V1_0/IImsRadioIndication.java	untracked, ignored, or submodule working file
+device/motorola/obake	imsradio/src/vendor/qti/hardware/radio/ims/V1_0/IImsRadioResponse.java	untracked, ignored, or submodule working file
+device/motorola/obake	imsradio/src/vendor/qti/hardware/radio/ims/V1_0/ImsSubConfigInfo.java	untracked, ignored, or submodule working file
+device/motorola/obake	imsradio/src/vendor/qti/hardware/radio/ims/V1_0/IpPresentation.java	untracked, ignored, or submodule working file
+device/motorola/obake	imsradio/src/vendor/qti/hardware/radio/ims/V1_0/MessageDetails.java	untracked, ignored, or submodule working file
+device/motorola/obake	imsradio/src/vendor/qti/hardware/radio/ims/V1_0/MessagePriority.java	untracked, ignored, or submodule working file
+device/motorola/obake	imsradio/src/vendor/qti/hardware/radio/ims/V1_0/MessageSummary.java	untracked, ignored, or submodule working file
+device/motorola/obake	imsradio/src/vendor/qti/hardware/radio/ims/V1_0/MessageType.java	untracked, ignored, or submodule working file
+device/motorola/obake	imsradio/src/vendor/qti/hardware/radio/ims/V1_0/MessageWaitingIndication.java	untracked, ignored, or submodule working file
+device/motorola/obake	imsradio/src/vendor/qti/hardware/radio/ims/V1_0/NotificationType.java	untracked, ignored, or submodule working file
+device/motorola/obake	imsradio/src/vendor/qti/hardware/radio/ims/V1_0/ParticipantStatusInfo.java	untracked, ignored, or submodule working file
+device/motorola/obake	imsradio/src/vendor/qti/hardware/radio/ims/V1_0/RadioState.java	untracked, ignored, or submodule working file
+device/motorola/obake	imsradio/src/vendor/qti/hardware/radio/ims/V1_0/RadioTechType.java	untracked, ignored, or submodule working file
+device/motorola/obake	imsradio/src/vendor/qti/hardware/radio/ims/V1_0/RegFailureReasonType.java	untracked, ignored, or submodule working file
+device/motorola/obake	imsradio/src/vendor/qti/hardware/radio/ims/V1_0/RegState.java	untracked, ignored, or submodule working file
+device/motorola/obake	imsradio/src/vendor/qti/hardware/radio/ims/V1_0/RegistrationInfo.java	untracked, ignored, or submodule working file
+device/motorola/obake	imsradio/src/vendor/qti/hardware/radio/ims/V1_0/RttMode.java	untracked, ignored, or submodule working file
+device/motorola/obake	imsradio/src/vendor/qti/hardware/radio/ims/V1_0/ServiceClassStatus.java	untracked, ignored, or submodule working file
+device/motorola/obake	imsradio/src/vendor/qti/hardware/radio/ims/V1_0/ServiceStatusInfo.java	untracked, ignored, or submodule working file
+device/motorola/obake	imsradio/src/vendor/qti/hardware/radio/ims/V1_0/ServiceType.java	untracked, ignored, or submodule working file
+device/motorola/obake	imsradio/src/vendor/qti/hardware/radio/ims/V1_0/SipErrorInfo.java	untracked, ignored, or submodule working file
+device/motorola/obake	imsradio/src/vendor/qti/hardware/radio/ims/V1_0/StatusForAccessTech.java	untracked, ignored, or submodule working file
+device/motorola/obake	imsradio/src/vendor/qti/hardware/radio/ims/V1_0/StatusType.java	untracked, ignored, or submodule working file
+device/motorola/obake	imsradio/src/vendor/qti/hardware/radio/ims/V1_0/SuppServiceNotification.java	untracked, ignored, or submodule working file
+device/motorola/obake	imsradio/src/vendor/qti/hardware/radio/ims/V1_0/SuppServiceStatus.java	untracked, ignored, or submodule working file
+device/motorola/obake	imsradio/src/vendor/qti/hardware/radio/ims/V1_0/ToneOperation.java	untracked, ignored, or submodule working file
+device/motorola/obake	imsradio/src/vendor/qti/hardware/radio/ims/V1_0/TtyInfo.java	untracked, ignored, or submodule working file
+device/motorola/obake	imsradio/src/vendor/qti/hardware/radio/ims/V1_0/TtyMode.java	untracked, ignored, or submodule working file
+device/motorola/obake	imsradio/src/vendor/qti/hardware/radio/ims/V1_0/ViceInfo.java	untracked, ignored, or submodule working file
+device/motorola/obake	imsradio/src/vendor/qti/hardware/radio/ims/V1_0/VoWiFiCallQualityInfo.java	untracked, ignored, or submodule working file
+device/motorola/obake	netmgrtrace/Android.mk	untracked, ignored, or submodule working file
+device/motorola/obake	netmgrtrace/netmgr_trace.cpp	untracked, ignored, or submodule working file
+device/motorola/obake	overlay/lineage-sdk/lineage/res/res/values/config.xml	untracked, ignored, or submodule working file
+device/motorola/obake	sepolicy/adbd.te	untracked, ignored, or submodule working file
+device/motorola/obake	sepolicy/adspd.te	untracked, ignored, or submodule working file
+device/motorola/obake	sepolicy/batt_health.te	untracked, ignored, or submodule working file
+device/motorola/obake	sepolicy/bootmodem.te	untracked, ignored, or submodule working file
+device/motorola/obake	sepolicy/file_contexts	untracked, ignored, or submodule working file
+device/motorola/obake	sepolicy/hal_imsrtp.te	untracked, ignored, or submodule working file
+device/motorola/obake	sepolicy/ims.te	untracked, ignored, or submodule working file
+device/motorola/obake	sepolicy/ims_dpl_bootstrapd.te	untracked, ignored, or submodule working file
+device/motorola/obake	sepolicy/ims_lte_guard.te	untracked, ignored, or submodule working file
+device/motorola/obake	sepolicy/init.te	untracked, ignored, or submodule working file
+device/motorola/obake	sepolicy/initial_attach_apnd.te	untracked, ignored, or submodule working file
+device/motorola/obake	sepolicy/keystore.te	untracked, ignored, or submodule working file
+device/motorola/obake	sepolicy/mm-qcamerad.te	untracked, ignored, or submodule working file
+device/motorola/obake	sepolicy/netmgrd.te	untracked, ignored, or submodule working file
+device/motorola/obake	sepolicy/obake_bluetooth_loader.te	untracked, ignored, or submodule working file
+device/motorola/obake	sepolicy/obake_wcnss_trigger.te	untracked, ignored, or submodule working file
+device/motorola/obake	sepolicy/property.te	untracked, ignored, or submodule working file
+device/motorola/obake	sepolicy/property_contexts	untracked, ignored, or submodule working file
+device/motorola/obake	sepolicy/radio.te	untracked, ignored, or submodule working file
+device/motorola/obake	sepolicy/rild.te	untracked, ignored, or submodule working file
+device/motorola/obake	sepolicy/rmt_storage.te	untracked, ignored, or submodule working file
+device/motorola/obake	sepolicy/shell.te	untracked, ignored, or submodule working file
+device/motorola/obake	sepolicy/system_app.te	untracked, ignored, or submodule working file
+device/qcom/common	power/power-8960.c	modified or added
+device/qcom/sepolicy	common/file_contexts	modified or added
+frameworks/av	media/libmedia/TypeConverter.cpp	modified or added
+frameworks/av	services/camera/libcameraservice/api1/CameraClient.cpp	modified or added
+frameworks/av	services/camera/libcameraservice/device1/CameraHardwareInterface.cpp	modified or added
+frameworks/base	core/java/android/os/UpdateEngine.java	modified or added
+frameworks/base	core/java/com/android/internal/widget/LockPatternUtils.java	modified or added
+frameworks/base	libs/androidfw/ResourceTypes.cpp	modified or added
+frameworks/base	packages/SystemUI/src/com/android/systemui/statusbar/policy/MobileSignalController.java	modified or added
+frameworks/base	tools/aapt/ResourceTable.cpp	modified or added
+frameworks/opt/telephony	src/java/com/android/internal/telephony/GsmCdmaPhone.java	modified or added
+frameworks/opt/telephony	src/java/com/android/internal/telephony/Phone.java	modified or added
+frameworks/opt/telephony	src/java/com/android/internal/telephony/RIL.java	modified or added
+frameworks/opt/telephony	src/java/com/android/internal/telephony/LegacyInitialAttachClient.java	untracked, ignored, or submodule working file
+hardware/interfaces	camera/device/1.0/default/CameraDevice.cpp	modified or added
+hardware/qcom/audio-caf/msm8960	hal/Android.mk	modified or added
+hardware/qcom/audio-caf/msm8960	hal/audio_hw.c	modified or added
+hardware/qcom/audio-caf/msm8960	hal/msm8960/platform.c	modified or added
+hardware/qcom/audio-caf/msm8960	hal/platform_info.c	modified or added
+hardware/qcom/audio-caf/msm8960	hal/voice.c	modified or added
+hardware/qcom/audio-caf/msm8960	hal/voice_extn/voice_extn.c	modified or added
+hardware/qcom/audio-caf/msm8960	mm-audio/aenc-aac/qdsp6/Android.mk	modified or added
+hardware/qcom/audio-caf/msm8960	mm-audio/aenc-amrnb/qdsp6/Android.mk	modified or added
+hardware/qcom/audio-caf/msm8960	mm-audio/aenc-evrc/qdsp6/Android.mk	modified or added
+hardware/qcom/audio-caf/msm8960	mm-audio/aenc-qcelp13/qdsp6/Android.mk	modified or added
+hardware/qcom/audio-caf/msm8960	policy_hal/AudioPolicyManager.cpp	modified or added
+hardware/qcom/media-caf/msm8960	mm-video/vidc/vdec/Android.mk	modified or added
+hardware/qcom/media-caf/msm8960	mm-video/vidc/venc/Android.mk	modified or added
+hardware/ril	libril/ril.cpp	modified or added
+hardware/ril	libril/ril_internal.h	modified or added
+hardware/ril	libril/ril_service.cpp	modified or added
+kernel/motorola/ghost	arch/arm/Kconfig	modified or added
+kernel/motorola/ghost	arch/arm/configs/msm8960dt_mmi_defconfig	modified or added
+kernel/motorola/ghost	arch/arm/kernel/entry-common.S	modified or added
+kernel/motorola/ghost	arch/arm/mach-msm/Alessa_Plug.c	modified or added
+kernel/motorola/ghost	arch/arm/mach-msm/qdsp6v2/audio_acdb.c	modified or added
+kernel/motorola/ghost	drivers/cpufreq/cpu-boost.c	modified or added
+kernel/motorola/ghost	fs/exec.c	modified or added
+kernel/motorola/ghost	fs/timerfd.c	modified or added
+kernel/motorola/ghost	include/linux/filter.h	modified or added
+kernel/motorola/ghost	include/linux/sched.h	modified or added
+kernel/motorola/ghost	include/linux/security.h	modified or added
+kernel/motorola/ghost	kernel/seccomp.c	modified or added
+kernel/motorola/ghost	kernel/sys.c	modified or added
+kernel/motorola/ghost	mm/page_alloc.c	modified or added
+kernel/motorola/ghost	net/core/filter.c	modified or added
+kernel/motorola/ghost	security/commoncap.c	modified or added
+kernel/motorola/ghost	sound/soc/msm/msm-pcm-voice.c	modified or added
+kernel/motorola/ghost	sound/soc/msm/qdsp6/q6voice.c	modified or added
+kernel/motorola/ghost	sound/soc/msm/qdsp6/q6voice.h	modified or added
+lineage-sdk	Android.mk	modified or added
+packages/apps/Jelly	app/src/main/AndroidManifest.xml	modified or added
+packages/apps/Nfc	nxp/src/com/android/nfc/dhimpl/NativeNfcManager.java	modified or added
+system/core	fastboot/Android.mk	modified or added
+system/core	fastboot/fs.cpp	modified or added
+system/core	fs_mgr/fs_mgr_fstab.cpp	modified or added
+system/core	rootdir/init.rc	modified or added
+system/hardware/interfaces	wifi/keystore/1.0/Android.bp	modified or added
+system/update_engine	binder_bindings/android/os/IUpdateEngine.aidl	modified or added
+vendor/motorola	msm8960dt-common/msm8960dt-common-vendor-blobs.mk	modified or added
+vendor/motorola	msm8960dt-common/proprietary/lib/libAlAisLib.so	modified or added
+vendor/motorola	msm8960dt-common/proprietary/lib/libVdlFaceDetection.so	modified or added
+vendor/motorola	msm8960dt-common/proprietary/lib/libl6lencgain.so	modified or added
+vendor/motorola	msm8960dt-common/proprietary/lib/libmmcamera_frameproc.so	modified or added
+vendor/motorola	msm8960dt-common/proprietary/lib/libmmcamera_wavelet_lib.so	modified or added
+vendor/motorola	msm8960dt-common/proprietary/lib/libmmjpeg.so	modified or added
+vendor/motorola	msm8960dt-common/proprietary/lib/libmot_sensorlistener.so	modified or added
+vendor/motorola	msm8960dt-common/proprietary/lib/libqc-opt.so	modified or added
+vendor/motorola	msm8960dt-common/proprietary/radio-su6-77/bin/ims_rtp_daemon	untracked, ignored, or submodule working file
+vendor/motorola	msm8960dt-common/proprietary/radio-su6-77/bin/imsdatadaemon	untracked, ignored, or submodule working file
+vendor/motorola	msm8960dt-common/proprietary/radio-su6-77/bin/imsqmidaemon	untracked, ignored, or submodule working file
+vendor/motorola	msm8960dt-common/proprietary/radio-su6-77/bin/netmgrd-su6-77	untracked, ignored, or submodule working file
+vendor/motorola	msm8960dt-common/proprietary/radio-su6-77/bin/qmi_motext_hook	untracked, ignored, or submodule working file
+vendor/motorola	msm8960dt-common/proprietary/radio-su6-77/bin/qmuxd-su6-77	untracked, ignored, or submodule working file
+vendor/motorola	msm8960dt-common/proprietary/radio-su6-77/lib/lib-dplmedia.so	untracked, ignored, or submodule working file
+vendor/motorola	msm8960dt-common/proprietary/radio-su6-77/lib/lib-imsSDP.so	untracked, ignored, or submodule working file
+vendor/motorola	msm8960dt-common/proprietary/radio-su6-77/lib/lib-imsdpl.so	untracked, ignored, or submodule working file
+vendor/motorola	msm8960dt-common/proprietary/radio-su6-77/lib/lib-imsqimf.so	untracked, ignored, or submodule working file
+vendor/motorola	msm8960dt-common/proprietary/radio-su6-77/lib/lib-imsrcs.so	untracked, ignored, or submodule working file
+vendor/motorola	msm8960dt-common/proprietary/radio-su6-77/lib/lib-imss.so	untracked, ignored, or submodule working file
+vendor/motorola	msm8960dt-common/proprietary/radio-su6-77/lib/lib-imsxml.so	untracked, ignored, or submodule working file
+vendor/motorola	msm8960dt-common/proprietary/radio-su6-77/lib/lib-rtpcommon.so	untracked, ignored, or submodule working file
+vendor/motorola	msm8960dt-common/proprietary/radio-su6-77/lib/lib-rtpcore.so	untracked, ignored, or submodule working file
+vendor/motorola	msm8960dt-common/proprietary/radio-su6-77/lib/lib-rtpdaemoninterface.so	untracked, ignored, or submodule working file
+vendor/motorola	msm8960dt-common/proprietary/radio-su6-77/lib/lib-rtpsl.so	untracked, ignored, or submodule working file
+vendor/motorola	msm8960dt-common/proprietary/radio-su6-77/lib/libadropbox.so	untracked, ignored, or submodule working file
+vendor/motorola	msm8960dt-common/proprietary/radio-su6-77/lib/libdiag.so	untracked, ignored, or submodule working file
+vendor/motorola	msm8960dt-common/proprietary/radio-su6-77/lib/libdsi_netctrl.so	untracked, ignored, or submodule working file
+vendor/motorola	msm8960dt-common/proprietary/radio-su6-77/lib/libdsutils.so	untracked, ignored, or submodule working file
+vendor/motorola	msm8960dt-common/proprietary/radio-su6-77/lib/libidl.so	untracked, ignored, or submodule working file
+vendor/motorola	msm8960dt-common/proprietary/radio-su6-77/lib/libmdmcutback.so	untracked, ignored, or submodule working file
+vendor/motorola	msm8960dt-common/proprietary/radio-su6-77/lib/libmotext_inf.so	untracked, ignored, or submodule working file
+vendor/motorola	msm8960dt-common/proprietary/radio-su6-77/lib/libnetmgr.so	untracked, ignored, or submodule working file
+vendor/motorola	msm8960dt-common/proprietary/radio-su6-77/lib/libqcci_legacy.so	untracked, ignored, or submodule working file
+vendor/motorola	msm8960dt-common/proprietary/radio-su6-77/lib/libqdi.so	untracked, ignored, or submodule working file
+vendor/motorola	msm8960dt-common/proprietary/radio-su6-77/lib/libqdp.so	untracked, ignored, or submodule working file
+vendor/motorola	msm8960dt-common/proprietary/radio-su6-77/lib/libqmi.so	untracked, ignored, or submodule working file
+vendor/motorola	msm8960dt-common/proprietary/radio-su6-77/lib/libqmi_cci.so	untracked, ignored, or submodule working file
+vendor/motorola	msm8960dt-common/proprietary/radio-su6-77/lib/libqmi_client_qmux.so	untracked, ignored, or submodule working file
+vendor/motorola	msm8960dt-common/proprietary/radio-su6-77/lib/libqmi_common_so.so	untracked, ignored, or submodule working file
+vendor/motorola	msm8960dt-common/proprietary/radio-su6-77/lib/libqmi_csi.so	untracked, ignored, or submodule working file
+vendor/motorola	msm8960dt-common/proprietary/radio-su6-77/lib/libqmi_encdec.so	untracked, ignored, or submodule working file
+vendor/motorola	msm8960dt-common/proprietary/radio-su6-77/lib/libqmiservices.so	untracked, ignored, or submodule working file
+vendor/motorola	msm8960dt-common/proprietary/radio-su6-77/lib/libqsap_sdk.so	untracked, ignored, or submodule working file
+vendor/motorola	msm8960dt-common/proprietary/radio-su6-77/lib/libril-qc-qmi-1.so	untracked, ignored, or submodule working file
+vendor/motorola	msm8960dt-common/proprietary/radio-su6-77/lib/libril-qcril-hook-oem.so	untracked, ignored, or submodule working file
+vendor/motorola	msm8960dt-common/proprietary/radio-su6-77/lib/libtime_genoff.so	untracked, ignored, or submodule working file
+vendor/motorola	msm8960dt-common/proprietary/radio-su6-77/lib/libwpa_client.so	untracked, ignored, or submodule working file
+vendor/xperience	build/soong/android/variable.go	modified or added
+vendor/xperience	build/soong/soong_config.mk	modified or added
+vendor/xperience	config/cmsdk_common.mk	modified or added

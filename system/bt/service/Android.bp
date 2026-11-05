@@ -1,0 +1,76 @@
+subdirs = [
+    "common",
+]
+
+
+
+// Source variables
+// ========================================================
+btserviceDaemonSrc = [
+    "adapter.cc",
+    "daemon.cc",
+    "gatt_client.cc",
+    "gatt_server.cc",
+    "gatt_server_old.cc",
+    "hal/bluetooth_gatt_interface.cc",
+    "hal/bluetooth_interface.cc",
+    "ipc/ipc_handler.cc",
+    "ipc/ipc_manager.cc",
+    "logging_helpers.cc",
+    "low_energy_advertiser.cc",
+    "low_energy_scanner.cc",
+    "low_energy_client.cc",
+    "settings.cc",
+]
+
+btserviceLinuxSrc = [
+    "ipc/ipc_handler_linux.cc",
+    "ipc/linux_ipc_host.cc",
+]
+
+btserviceBinderDaemonSrc = [
+    "ipc/binder/bluetooth_binder_server.cc",
+    "ipc/binder/bluetooth_gatt_client_binder_server.cc",
+    "ipc/binder/bluetooth_gatt_server_binder_server.cc",
+    "ipc/binder/bluetooth_le_advertiser_binder_server.cc",
+    "ipc/binder/bluetooth_le_scanner_binder_server.cc",
+    "ipc/binder/bluetooth_low_energy_binder_server.cc",
+    "ipc/binder/interface_with_instances_base.cc",
+    "ipc/binder/ipc_handler_binder.cc",
+]
+
+// Main unit test sources. These get built for host and target.
+// ========================================================
+btserviceBaseTestSrc = [
+    "hal/fake_bluetooth_gatt_interface.cc",
+    "hal/fake_bluetooth_interface.cc",
+    "test/adapter_unittest.cc",
+    "test/advertise_data_unittest.cc",
+    "test/fake_hal_util.cc",
+    "test/gatt_client_unittest.cc",
+    "test/gatt_server_unittest.cc",
+    "test/low_energy_advertiser_unittest.cc",
+    "test/low_energy_client_unittest.cc",
+    "test/low_energy_scanner_unittest.cc",
+    "test/settings_unittest.cc",
+    "test/uuid_unittest.cc",
+]
+
+// Native system service for target
+// ========================================================
+
+
+// Native system service unit tests for target and host
+
+// ========================================================
+
+
+// Native system service CLI for target
+// ========================================================
+
+
+// Heart Rate GATT service example for target
+// ========================================================
+
+
+

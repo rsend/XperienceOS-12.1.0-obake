@@ -1,6 +1,0 @@
-NOTICE
-OWNERS
-README
-darwin-x86_64/NOTICE.txt
-linux-x86_64/NOTICE.txt
-update_emulator.sh

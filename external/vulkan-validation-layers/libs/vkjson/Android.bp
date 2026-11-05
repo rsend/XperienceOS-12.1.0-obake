@@ -1,0 +1,22 @@
+cc_library_static {
+    name: "libvkjson",
+    srcs: [
+        "vkjson.cc",
+        "vkjson_instance.cc",
+    ],
+    cppflags: [
+        "-std=c++11",
+        "-Wno-sign-compare",
+    ],
+    export_include_dirs: [
+        ".",
+    ],
+    whole_static_libs: [
+        "cjson",
+    ],
+    header_libs: [
+        "vulkan_headers",
+    ],
+}
+
+

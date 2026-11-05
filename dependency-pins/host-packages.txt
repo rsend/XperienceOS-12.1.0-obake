@@ -32,3 +32,5 @@ unzip
 xsltproc
 zip
 zlib1g-dev
+xz-utils
+kmod

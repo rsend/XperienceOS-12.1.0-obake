@@ -1,0 +1,22 @@
+{
+  "original_workspace_references": [],
+  "upstream_fetch_commands": [],
+  "init_enforcing_defines": 24,
+  "init_permissive_defines": 0,
+  "boot_recovery_commands": [
+    {
+      "line": 8313,
+      "enforcing": true,
+      "permissive": false
+    },
+    {
+      "line": 64601,
+      "enforcing": true,
+      "permissive": false
+    }
+  ],
+  "policy_permissive_checks": [
+    8078,
+    64551
+  ]
+}

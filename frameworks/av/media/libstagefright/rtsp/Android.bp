@@ -1,0 +1,57 @@
+cc_library_static {
+    name: "libstagefright_rtsp",
+
+    srcs: [
+        "AAMRAssembler.cpp",
+        "AAVCAssembler.cpp",
+        "AH263Assembler.cpp",
+        "AMPEG2TSAssembler.cpp",
+        "AMPEG4AudioAssembler.cpp",
+        "AMPEG4ElementaryAssembler.cpp",
+        "APacketSource.cpp",
+        "ARawAudioAssembler.cpp",
+        "ARTPAssembler.cpp",
+        "ARTPConnection.cpp",
+        "ARTPSource.cpp",
+        "ARTPWriter.cpp",
+        "ARTSPConnection.cpp",
+        "ASessionDescription.cpp",
+        "SDPLoader.cpp",
+    ],
+
+    shared_libs: [
+        "libcrypto",
+        "libmedia",
+    ],
+
+    include_dirs: [
+        "frameworks/av/media/libstagefright",
+        "frameworks/native/include/media/openmax",
+    ],
+
+    arch: {
+        arm: {
+            cflags: ["-Wno-psabi"],
+        },
+    },
+
+    cflags: [
+        "-Werror",
+        "-Wall",
+    ],
+
+    sanitize: {
+        misc_undefined: [
+            "signed-integer-overflow",
+            "unsigned-integer-overflow",
+        ],
+        cfi: true,
+        diag: {
+            cfi: true,
+        },
+    },
+}
+
+//###############################################################################
+
+

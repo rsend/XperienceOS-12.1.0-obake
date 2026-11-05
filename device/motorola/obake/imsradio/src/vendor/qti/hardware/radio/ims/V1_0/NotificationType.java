@@ -1,0 +1,43 @@
+package vendor.qti.hardware.radio.ims.V1_0;
+
+import java.util.ArrayList;
+/* loaded from: classes.dex */
+public final class NotificationType {
+    public static final int INVALID = 2;
+    public static final int MO = 0;
+    public static final int MT = 1;
+
+    public static final String toString(int o) {
+        if (o == 0) {
+            return "MO";
+        }
+        if (o == 1) {
+            return "MT";
+        }
+        if (o == 2) {
+            return "INVALID";
+        }
+        return "0x" + Integer.toHexString(o);
+    }
+
+    public static final String dumpBitfield(int o) {
+        ArrayList<String> list = new ArrayList<>();
+        int flipped = 0;
+        if ((o & 0) == 0) {
+            list.add("MO");
+            flipped = 0;
+        }
+        if ((o & 1) == 1) {
+            list.add("MT");
+            flipped |= 1;
+        }
+        if ((o & 2) == 2) {
+            list.add("INVALID");
+            flipped |= 2;
+        }
+        if (o != flipped) {
+            list.add("0x" + Integer.toHexString((~flipped) & o));
+        }
+        return String.join(" | ", list);
+    }
+}

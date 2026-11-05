@@ -1,0 +1,21 @@
+// Copyright 2017 The Android Open Source Project
+
+//########################
+// Build the debugfs binary
+
+
+
+debugfs_libs = [
+    "libext2_misc",
+    "libext2fs",
+    "libext2_blkid",
+    "libext2_uuid",
+    "libext2_ss",
+    "libext2_quota",
+    "libext2_com_err",
+    "libext2_e2p",
+]
+
+
+
+

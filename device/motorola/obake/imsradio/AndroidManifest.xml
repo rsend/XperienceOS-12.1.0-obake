@@ -1,0 +1,28 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="org.xperience.imsradio"
+    android:sharedUserId="android.uid.phone">
+
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+
+    <application
+        android:name=".ImsRadioApplication"
+        android:allowBackup="false"
+        android:directBootAware="true"
+        android:hasCode="true"
+        android:label="Obake IMS radio adapter"
+        android:persistent="true">
+        <service
+            android:name=".ImsRadioAdapterService"
+            android:directBootAware="true"
+            android:exported="false" />
+        <receiver
+            android:name=".BootReceiver"
+            android:directBootAware="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.LOCKED_BOOT_COMPLETED" />
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+        </receiver>
+    </application>
+</manifest>

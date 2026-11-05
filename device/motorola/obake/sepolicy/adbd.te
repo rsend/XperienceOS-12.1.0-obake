@@ -1,0 +1,4 @@
+type legacy_adb_device, dev_type;
+
+# This kernel exposes the legacy USB gadget node instead of functionfs.
+allow adbd legacy_adb_device:chr_file rw_file_perms;

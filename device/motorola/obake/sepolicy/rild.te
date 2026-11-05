@@ -1,0 +1,12 @@
+# QCRIL forks this stock helper; keep its inherited radio identity and QMI
+# permissions, but authorize execution only of the specifically labeled file.
+type qmi_motext_hook_exec, exec_type, vendor_file_type, file_type;
+allow rild qmi_motext_hook_exec:file rx_file_perms;
+
+# Legacy QCRIL calls AudioSystem during IMS call setup. It must discover
+# AudioFlinger/AudioPolicy through Binder before using the existing audio IPC
+# permissions. Keep this exception local to the non-Treble Obake device.
+not_full_treble(`
+    binder_use(rild)
+    allow rild audioserver_service:service_manager find;
+')

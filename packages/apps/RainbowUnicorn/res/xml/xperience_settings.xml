@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (C) 2017 The XPerience Project
+
+     Licensed under the Apache License, Version 2.0 (the License);
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          httpwww.apache.orglicensesLICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an AS IS BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
+    android:title="@string/xperience_settings_title" >
+		
+        <!-- Status Bar -->
+        <Preference
+            android:key="statusbar_category"
+            android:title="@string/statusbar_title"
+            android:fragment="mx.xperience.rainbowunicorn.fragments.StatusBarSettings"
+            android:icon="@drawable/ic_xperience_statusbar" />
+
+        <!-- Display -->
+        <Preference
+            android:key="display_category"
+            android:title="@string/display_title"
+            android:fragment="mx.xperience.rainbowunicorn.fragments.DisplaySettings"
+            android:icon="@drawable/ic_xperience_display"/>
+
+        <!-- lockscreen -->
+        <Preference
+            android:key="lockscreen_category"
+            android:title="@string/lockscreen_title"
+            android:fragment="mx.xperience.rainbowunicorn.fragments.LockScreenSettings"
+            android:icon="@drawable/ic_xperience_lockscreen"/>
+
+        <!-- Misc -->
+        <Preference
+            android:key="misc_category"
+            android:title="@string/misc_title"
+            android:fragment="mx.xperience.rainbowunicorn.fragments.MiscSettings"
+            android:icon="@drawable/ic_xperience_misc"/>
+			
+        <!-- navbar -->
+        <Preference
+            android:key="navbar_category"
+            android:title="@string/navbar_title"
+            android:fragment="mx.xperience.rainbowunicorn.fragments.NavbarSettings"
+            android:icon="@drawable/ic_xperience_navbar"/>
+
+        <!-- Recents -->
+        <Preference
+            android:key="recents_category"
+            android:title="@string/recents_title"
+            android:fragment="mx.xperience.rainbowunicorn.fragments.RecentsSettings"
+            android:icon="@drawable/ic_xperience_recents"/>
+
+</PreferenceScreen>

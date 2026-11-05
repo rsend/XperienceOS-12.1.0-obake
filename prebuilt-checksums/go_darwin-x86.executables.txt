@@ -1,5 +1,0 @@
-misc/ios/clangwrap.sh
-src/cmd/go/mkalldocs.sh
-src/syscall/mkall.sh
-src/syscall/mkerrors.sh
-src/syscall/mksysnum_plan9.sh

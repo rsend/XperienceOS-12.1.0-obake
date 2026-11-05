@@ -1,7 +1,0 @@
-NOTICE
-build-lucid-multilib-toolchain.sh
-lib/gcc/x86_64-linux/4.8/include-fixed/README
-lib/gcc/x86_64-linux/4.8/install-tools/include/README
-libexec/gcc/x86_64-linux/4.8/install-tools/fixinc.sh
-x86_64-linux/lib32/libstdc++.so.6.0.18-gdb.py
-x86_64-linux/lib64/libstdc++.so.6.0.18-gdb.py

@@ -1,0 +1,27 @@
+perfprofd_cflags = [
+    "-Wall",
+    "-Werror",
+]
+
+perfprofd_cppflags = [
+    "-Wno-sign-compare",
+    "-Wno-unused-parameter",
+]
+
+//
+// Static library containing guts of AWP daemon.
+//
+
+
+
+//
+// Static library with primary utilities layer (called by perfprofd core)
+//
+
+
+//
+// Main daemon
+//
+
+
+subdirs = []

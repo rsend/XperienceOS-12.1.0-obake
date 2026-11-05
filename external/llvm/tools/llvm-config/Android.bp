@@ -1,0 +1,8 @@
+//===---------------------------------------------------------------===
+// llvm-config command line tool
+//===---------------------------------------------------------------===
+
+
+
+// Create BuildVariables.inc dynamically from BuildVariables.inc.in
+

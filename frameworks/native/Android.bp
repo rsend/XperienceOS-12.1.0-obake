@@ -1,0 +1,18 @@
+
+
+subdirs = [
+    "cmds/*",
+    "headers",
+    "libs/*",
+    "opengl",
+    "services/*",
+    "vulkan",
+]
+
+ndk_headers {
+    name: "libandroid_headers",
+    from: "include/android",
+    to: "android",
+    srcs: ["include/android/**/*.h"],
+    license: "NOTICE",
+}

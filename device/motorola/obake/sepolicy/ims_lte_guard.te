@@ -1,0 +1,21 @@
+type ims_lte_guard, domain;
+type ims_lte_guard_exec, exec_type, file_type;
+
+init_daemon_domain(ims_lte_guard)
+
+# The guard reads only its rollback controls and the adapter's explicit user
+# intent, then publishes bounded readiness/recovery state under sys.ims.*.
+get_prop(ims_lte_guard, ims_native_control_prop)
+get_prop(ims_lte_guard, ims_radio_adapter_control_prop)
+get_prop(ims_lte_guard, qcom_ims_prop)
+set_prop(ims_lte_guard, qcom_ims_prop)
+
+# NAS and IMSA use the matching legacy QMI transport and libdiag closure.
+qmux_socket(ims_lte_guard)
+allow ims_lte_guard self:socket create_socket_perms;
+allowxperm ims_lte_guard self:socket ioctl msm_sock_ipc_ioctls;
+diag_use(ims_lte_guard)
+
+# The legacy QMI client library probes the online CPU mask while creating its
+# worker threads. This kernel exposes that node with the generic sysfs label.
+allow ims_lte_guard sysfs:file { getattr open read };

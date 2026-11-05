@@ -1,0 +1,12 @@
+project	path	upstream_revision	baseline_state
+external/Microsoft-GSL	tests/unittest-cpp	dc6b90838014ab985bf3cd74ac17ad9d00e1fbcb	unpopulated; not an image build dependency
+external/brotli	research/esaxx	ca7cb332011ec37a8436487f210f396b84bd8273	unpopulated; not an image build dependency
+external/brotli	terryfy	8bb673f4410819df06920fdcfd24e18d235d84f7	unpopulated; not an image build dependency
+external/lisa	libs/bart	caa216a10e21cd9557cdedb91e5479e690cb64a4	unpopulated; not an image build dependency
+external/lisa	libs/devlib	2e106c9f70b626acea9c879abb891e2d32769c2e	unpopulated; not an image build dependency
+external/lisa	libs/trappy	5a8aec8eb8f5b6c950587dc1c4c0eddb85cdd7cb	unpopulated; not an image build dependency
+external/lisa	wiki	191401d961be4fdf4370308516ddac2bc6fd443a	unpopulated; not an image build dependency
+external/ltp	testcases/kernel/mce-test	95e136a3b0cde818448d5fcff5bf75d58600dc0d	unpopulated; not an image build dependency
+external/okhttp	okhttp-hpacktests/src/test/resources/hpack-test-case	a5652bc2bc3d2a992f39446369fb004a72e881d4	unpopulated; not an image build dependency
+external/swiftshader	third_party/googletest	ecd530865cefdfa7dea58e84f6aa1b548950363d	unpopulated; not an image build dependency
+vendor/motorola	potter	126927647694cd0088642aecb94b4ba0e533a947	unpopulated; not an image build dependency

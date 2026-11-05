@@ -1,7 +1,0 @@
-231f7edcc7352d7734a96eef0b8030f77982678c516876fcb81e25b32d68564c  NOTICE
-b897d5cf560c244a9be6234bde13f786953e23148291718adde241ef8cb7d155  build-lucid-multilib-toolchain.sh
-32baa94efdf4fb418c20321f14a1b66982a6cd3c2b5bc8fbfbe438f687c528d6  lib/gcc/x86_64-linux/4.8/include-fixed/README
-32baa94efdf4fb418c20321f14a1b66982a6cd3c2b5bc8fbfbe438f687c528d6  lib/gcc/x86_64-linux/4.8/install-tools/include/README
-70b8585e264931047d22d2efbe08a45c6f75c9111ab2b52d147385a8e509397c  libexec/gcc/x86_64-linux/4.8/install-tools/fixinc.sh
-c8ba1f94e152a63d7db0112b155860ba40b9624b07a1a27253e379f6e2597f32  x86_64-linux/lib32/libstdc++.so.6.0.18-gdb.py
-cb5c61a404bdd47bad7305a2e510d5a491ab819a92aa977d73725934a9170a2d  x86_64-linux/lib64/libstdc++.so.6.0.18-gdb.py

@@ -1,0 +1,6 @@
+service ia_apnd /system/bin/initial_attach_apnd
+    class main
+    user root
+    group radio diag 2950 log
+    socket initial_attach_apn stream 0660 radio radio
+    setenv LD_LIBRARY_PATH /system/lib/radio-su6-77:/vendor/lib:/system/lib

@@ -1,0 +1,2 @@
+# Settings runs as system_app and reads the live SELinux enforcement state.
+allow system_app selinuxfs:file { open read };

@@ -1,0 +1,88 @@
+cc_defaults {
+    name: "fluoride_osi_defaults",
+    defaults: ["fluoride_defaults"],
+    include_dirs: [
+        "system/bt",
+        "system/bt/include",
+        "system/bt/osi/src/protos",
+        "system/bt/utils/include",
+        "system/bt/stack/include",
+    ]
+}
+
+// Static libraries required by other modules
+// ========================================================
+
+
+
+
+// Bluetooth Protobuf static library for target and host
+// ========================================================
+cc_library_static {
+    name: "libbt-protos",
+    defaults: ["fluoride_defaults"],
+    srcs: ["src/protos/bluetooth.proto"],
+    proto: {
+        export_proto_headers: true,
+    },
+    host_supported: true
+}
+
+
+// libosi static library for target
+// ========================================================
+cc_library_static {
+    name: "libosi",
+    defaults: ["fluoride_osi_defaults"],
+    // TODO(mcchou): Remove socket_utils sources after platform specific
+    // dependencies are abstracted.
+    srcs: [
+        "src/alarm.cc",
+        "src/allocation_tracker.cc",
+        "src/allocator.cc",
+        "src/array.cc",
+        "src/buffer.cc",
+        "src/compat.cc",
+        "src/config.cc",
+        "src/fixed_queue.cc",
+        "src/future.cc",
+        "src/hash_map_utils.cc",
+        "src/list.cc",
+        "src/metrics.cc",
+        "src/mutex.cc",
+        "src/osi.cc",
+        "src/properties.cc",
+        "src/reactor.cc",
+        "src/ringbuffer.cc",
+        "src/semaphore.cc",
+        "src/socket.cc",
+        "src/socket_utils/socket_local_client.cc",
+        "src/socket_utils/socket_local_server.cc",
+        "src/thread.cc",
+        "src/time.cc",
+        "src/wakelock.cc",
+    ],
+    shared_libs: [
+        "liblog",
+    ],
+    static_libs: ["libbt-protos"],
+    host_supported: true,
+    // TODO(armansito): Setting _GNU_SOURCE isn't very platform-independent but
+    // should be compatible for a Linux host OS. We should figure out what to do for
+    // a non-Linux host OS.
+    target: {
+        darwin: {
+            enabled: false,
+        },
+        linux: {
+            cflags: [
+                "-D_GNU_SOURCE",
+                "-DOS_GENERIC",
+            ],
+        },
+    },
+}
+
+// libosi unit tests for target and host
+// ========================================================
+

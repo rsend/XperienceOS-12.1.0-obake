@@ -1,0 +1,23 @@
+{
+  "user_reported_build_success": true,
+  "configuration": "xpe_obake-user",
+  "images": [
+    {
+      "name": "boot.img",
+      "size_bytes": 6600704,
+      "sha256": "066866f661f7a80f8aeffbb26c841f8a00dea9817c956f82bbd24ba5b3e56fe9"
+    },
+    {
+      "name": "system.img",
+      "size_bytes": 856836020,
+      "sha256": "19b0c91cfc0f4403f783cd94bd957a98736fca48a73dfd39b509f4c3acd5b9d9"
+    },
+    {
+      "name": "recovery.img",
+      "size_bytes": 8798208,
+      "sha256": "2bae5634b3ca6fa5e2696a112d10c2084796b64a17f1b914aba36d0518e6afab"
+    }
+  ],
+  "device_validation_performed": false,
+  "build_resumed_incrementally_after_trim_repairs": true
+}

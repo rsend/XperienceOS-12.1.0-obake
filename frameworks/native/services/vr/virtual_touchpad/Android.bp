@@ -1,0 +1,73 @@
+
+
+// Touchpad implementation.
+
+src = [
+    "EvdevInjector.cpp",
+    "VirtualTouchpadEvdev.cpp",
+]
+
+shared_libs = [
+    "libbase",
+    "liblog",
+    "libutils",
+]
+
+header_libraries = [
+    "libdvr_headers"
+]
+
+
+
+// Touchpad unit tests.
+
+test_static_libs = [
+    "libcutils",
+    "libvirtualtouchpad",
+    "libbase",
+    "liblog",
+    "libutils",
+]
+
+test_src_files = ["tests/VirtualTouchpad_test.cpp"]
+
+
+
+// Service.
+
+service_src = [
+    "main.cpp",
+    "VirtualTouchpadService.cpp",
+    "aidl/android/dvr/VirtualTouchpadService.aidl",
+]
+
+service_static_libs = [
+    "libcutils",
+    "libvirtualtouchpad",
+]
+
+service_shared_libs = [
+    "libbase",
+    "libbinder",
+    "liblog",
+    "libutils",
+]
+
+
+
+// Touchpad client library.
+
+client_src = [
+    "VirtualTouchpadClient.cpp",
+    "DvrVirtualTouchpadClient.cpp",
+    "aidl/android/dvr/VirtualTouchpadService.aidl",
+]
+
+client_shared_libs = [
+    "libbase",
+    "libbinder",
+    "liblog",
+    "libutils",
+]
+
+

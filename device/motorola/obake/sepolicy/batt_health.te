@@ -1,0 +1,16 @@
+type batt_health, domain;
+type batt_health_exec, exec_type, file_type;
+type batt_health_data_file, file_type, data_file_type;
+type sysfs_batt_health, fs_type, sysfs_type;
+type pds_file, file_type;
+
+init_daemon_domain(batt_health)
+
+allow batt_health batt_health_data_file:dir create_dir_perms;
+allow batt_health batt_health_data_file:file create_file_perms;
+r_dir_file(batt_health, pds_file)
+r_dir_file(batt_health, sysfs)
+allow batt_health sysfs_batt_health:dir search;
+allow batt_health sysfs_batt_health:file rw_file_perms;
+r_dir_file(batt_health, sysfs_battery_supply)
+r_dir_file(batt_health, sysfs_usb_supply)
