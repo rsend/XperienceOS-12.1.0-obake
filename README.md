@@ -1,7 +1,26 @@
 # XPerienceOS 12.1.0 for Motorola Droid Mini
 
-This is the integrated Android 8.1.0 source for the Motorola Droid Mini
-XT1030 (`obake`). It includes the device, kernel, framework, HAL, recovery,
+This a heavily AI-assisted port of Android 8.1.0 source for the Motorola Droid Mini
+XT1030 (`obake`). 
+
+IT IS INCOMPLETE; my goal is to port as far "up" as I can - which appears to be about up to Android 14. I just needed to make space on my development machine and am happy to publish this as-is - if only as a way for me to get it back in case I need it.
+
+This particular repository produces working builds, but several features are missing. I spent more time fixing these in Android 10 (upcoming).
+
+This is the last port (together with my other repository XPerienceOS-11.1.2-obake) based on XperienceOS; the next versions are all going to be based on LineageOS.
+
+NOT WORKING: 
+- VoLTE call volume
+- WiFi calling / video calling over LTE - out of scope
+- Hold / resume / call joining
+- DTMF menu controls
+- No automatic SIM handling; hard coded to T-mobile
+- Roaming
+- WiFi / BLE may be broken under enforcing SELinux, I stopped fixing this when I started working on Android 10.
+
+The following is a Codex-generated (but slightly edited) how-to; mostly a summary of how to deploy this if anyone wants to try it.
+
+It includes the device, kernel, framework, HAL, recovery,
 and vendor files from the working port, including local modifications.
 
 Project sources are ordinary files in this repository. No `repo sync`,
@@ -9,7 +28,9 @@ roomservice resolution, or submodule update is needed. The dependency installer
 downloads Ubuntu packages and the pinned historical toolchain inputs, using
 the same setup model as the xpe711 release.
 
-## Build on Ubuntu 20.04 amd64
+## Ubuntu 20.04 x64 - this is the only tested build environment 
+
+I have developed and tested this on a fresh install of 20.04 running in Virtualbox on a Windows guest. The following instructions set up the entire needed environment and produce the build outputs.
 
 Clone or copy the complete contents of this directory into a path without
 spaces. Open a fresh Bash terminal in that checkout and run as a regular user:
